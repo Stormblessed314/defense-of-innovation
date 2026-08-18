@@ -21,4 +21,6 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy site --project-name defense-of-innovation
+          command: |
+            pages project create defense-of-innovation --production-branch claude/defense-innovation-fund-site-ukfwms || true
+            pages deploy site --project-name defense-of-innovation

@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Defense of Innovation Fund</title>
+<meta name="description" content="A donor-funded initiative that buys small, targeted equipment for IDF ground-forces units in days, not months. Independent, lean, and blunt about what it is.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/css/site.css">
+<meta property="og:title" content="Defense of Innovation Fund">
+<meta property="og:description" content="Small equipment for IDF ground-forces units, bought in days instead of months.">
+</head>
+<body>
+
+<header class="hdr">
+  <a class="wordmark" href="/">
+    <svg class="glyph" viewBox="0 0 22 22" aria-hidden="true">
+      <path d="M3 19 L7 19 L7 12 L12 12 L12 6 L15 6" fill="none" stroke="#5F7EA6" stroke-width="1.2" stroke-dasharray="2 2.5"/>
+      <path d="M3 19 L17 5" fill="none" stroke="#2BE3C5" stroke-width="2.2"/>
+      <path d="M17 5 L11.5 6.4 M17 5 L15.6 10.5" fill="none" stroke="#2BE3C5" stroke-width="2.2" stroke-linecap="square"/>
+    </svg>
+    <span class="wm-text">DEFENSE OF INNOVATION <span class="wm-fund">FUND</span></span>
+  </a>
+  <button class="nav-toggle" aria-expanded="false" aria-controls="nav">MENU</button>
+  <nav class="nav" id="nav">
+    <a href="/" class="act">HOME</a>
+    <a href="/about/">ABOUT</a>
+    <a href="/faq/">FAQ</a>
+    <a href="/donate/" class="btn-donate">DONATE</a>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="band-dark hero">
+  <div class="inner">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow rv">Independent · Donor-funded · Ground forces</div>
+        <h1 class="rv d1">An IDF unit needs a 3D&nbsp;printer. The requisition takes months. <span class="accent">We take days.</span></h1>
+        <p class="lede rv d2">The Defense of Innovation Fund makes small, targeted purchases for ground-forces units — a printer, a spare part, the right tool — and hands them over while a standard request would still be working through the system. Donor-funded, deliberately lean, coordinated with the people who actually use the gear.</p>
+        <div class="cta-row rv d3">
+          <a class="btn btn-solid" href="/donate/">DONATE TO THE FUND</a>
+          <a class="btn btn-ghost" href="#gap">HOW IT WORKS</a>
+        </div>
+        <p class="hero-note rv d4">Straight answer up front: donations are not tax-deductible. <a href="/faq/#deductible">Here's why</a></p>
+      </div>
+      <div class="rv d2">
+        <svg class="routes" viewBox="0 0 520 340" role="img" aria-label="Diagram comparing a months-long standard requisition path against the fund's direct days-long path from donor to unit">
+          <!-- endpoints -->
+          <rect class="node" x="26" y="286" width="8" height="8"/>
+          <text class="lbl" x="24" y="316">DONOR</text>
+          <rect class="node" x="478" y="40" width="8" height="8"/>
+          <text class="lbl" x="440" y="30">UNIT</text>
+          <!-- slow path: right-angle crawl through approval stamps -->
+          <path id="slowPath" class="slow-path" d="M30 290 L30 236 L118 236 L118 268 L196 268 L196 180 L138 180 L138 118 L262 118 L262 196 L342 196 L342 88 L296 88 L296 44 L482 44"/>
+          <rect class="stamp" x="112" y="230" width="12" height="12"/>
+          <rect class="stamp" x="190" y="262" width="12" height="12"/>
+          <rect class="stamp" x="132" y="112" width="12" height="12"/>
+          <rect class="stamp" x="256" y="190" width="12" height="12"/>
+          <rect class="stamp" x="336" y="82" width="12" height="12"/>
+          <rect class="stamp" x="290" y="38" width="12" height="12"/>
+          <text class="lbl" x="56" y="210">STANDARD REQUISITION · MONTHS</text>
+          <!-- fast path -->
+          <path id="fastPath" class="fast-path" d="M30 290 L482 44"/>
+          <text class="lbl-fast" x="222" y="150" transform="rotate(-28.5 222 150)">THE FUND · DAYS</text>
+          <!-- moving dots (CSS offset-path) -->
+          <circle class="slow-dot anim-slow" r="3.5"/>
+          <circle class="fast-dot anim-fast" r="4.5"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="strip">
+    <div class="strip-row">
+      <div class="cell rv"><div class="k">Turnaround</div><div class="v">Days, not months</div></div>
+      <div class="cell rv d1"><div class="k">Scope</div><div class="v">Non-weapon equipment only</div></div>
+      <div class="cell rv d2"><div class="k">Structure</div><div class="v">Pooled fund, no earmarks</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 01 THE GAP ============ -->
+<section class="band-light" id="gap">
+  <div class="ghost" aria-hidden="true">01</div>
+  <div class="inner">
+    <div class="eyebrow rv">01 · The gap</div>
+    <h2 class="rv d1">Why a fund this small needs to exist</h2>
+    <div class="tick rv d1"></div>
+    <div class="prose rv d2" style="margin-top:32px">
+      <p>The IDF's procurement system does what military procurement systems do: it standardizes, it audits, it buys at scale. For vehicles, rations, and rifles, that rigor is the point. For a ₪4,000 printer that a unit's tinkerers want on a workbench this month, it is a wall. The request crawls from signature to signature until the moment has passed and the workaround has hardened into routine.</p>
+      <p>People inside innovation-focused units feel this constantly. They prototype, repair, and adapt equipment for the units around them, and what stops them is rarely knowledge or will. It is a missing item that any civilian could order before lunch.</p>
+    </div>
+    <div class="timeline rv d3">
+      <div class="tl-head"><div class="a">Standard requisition</div><div class="b">The fund</div></div>
+      <div class="tl-body">
+        <div class="tl-col a">
+          <div class="tl-item"><span class="t">DAY 0</span><span>Need identified in the unit</span></div>
+          <div class="tl-item"><span class="t">WEEK 1</span><span>Request drafted, filed, passed up</span></div>
+          <div class="tl-item"><span class="t">WEEK 4</span><span>Waiting on approval, resubmitted once</span></div>
+          <div class="tl-item"><span class="t">WEEK 10</span><span>Budget line debated</span></div>
+          <div class="tl-item"><span class="t">WEEK 16+</span><span>Ordered. Delivery eventually follows</span></div>
+        </div>
+        <div class="tl-col b">
+          <div class="tl-item"><span class="t">DAY 0</span><span>Need flagged by unit personnel</span></div>
+          <div class="tl-item"><span class="t">DAY 1</span><span>Checked and accepted with unit leadership</span></div>
+          <div class="tl-item"><span class="t">DAY 2</span><span>Ordered retail, off the shelf</span></div>
+          <div class="tl-item"><span class="t">DAY 6</span><span>On the workbench, receipt on file</span></div>
+        </div>
+      </div>
+      <div class="tl-foot">REPRESENTATIVE TIMELINE FOR A SMALL OFF-THE-SHELF PURCHASE. ACTUAL PURCHASES ARE PUBLISHED AS THEY HAPPEN.</div>
+    </div>
+    <p class="pull rv">The point is not that the army is broken. Some things are too small for a big system to do quickly, and too useful to wait for.</p>
+  </div>
+</section>
+
+<!-- ============ 02 THE MODEL ============ -->
+<section class="band-light alt" id="model">
+  <div class="ghost" aria-hidden="true">02</div>
+  <div class="inner">
+    <div class="eyebrow rv">02 · The model</div>
+    <h2 class="rv d1">Three steps, no machinery</h2>
+    <div class="tick rv d1"></div>
+    <div class="rows">
+      <div class="row rv">
+        <div class="no">01</div>
+        <h3>You give to one pooled fund</h3>
+        <p class="body">No campaigns, no earmarks, no progress bars waiting to fill. Pooled money is what makes a six-day turnaround possible: when a need surfaces, the funds already exist. <strong>You give what a fix costs; we deploy it where it moves a unit forward fastest.</strong></p>
+      </div>
+      <div class="row rv">
+        <div class="no">02</div>
+        <h3>People inside the units flag what's blocking them</h3>
+        <p class="body">The fund grew out of direct working relationships with personnel in innovation-focused ground-forces units. Needs come from the people doing the work, not from a wishlist we invented. <strong>Every delivery is accepted knowingly by unit leadership.</strong></p>
+      </div>
+      <div class="row rv">
+        <div class="no">03</div>
+        <h3>We buy retail and hand it over</h3>
+        <p class="body">Off the shelf, receipt kept, delivered in person. Afterward the purchase is published here: what it was, what it cost, and what it unblocked, in terms that identify <strong>no unit, no location, and no soldier</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 WHAT THE MONEY BUYS ============ -->
+<section class="band-light" id="buys">
+  <div class="ghost" aria-hidden="true">03</div>
+  <div class="inner">
+    <div class="eyebrow rv">03 · The shopping list</div>
+    <h2 class="rv d1">What the money buys</h2>
+    <div class="tick rv d1"></div>
+    <div class="buys">
+      <div class="buy rv">
+        <span class="what">FDM 3D printer, plus a season of filament</span>
+        <span class="why">Rapid fabrication of brackets, mounts, housings, and repairs</span>
+        <span class="cost">₪3,500–6,000</span>
+      </div>
+      <div class="buy rv">
+        <span class="what">Spare parts for equipment already in service</span>
+        <span class="why">The one component between a working system and a shelf queen</span>
+        <span class="cost">₪200–2,500</span>
+      </div>
+      <div class="buy rv">
+        <span class="what">Hand and power tools</span>
+        <span class="why">A workbench that matches the unit's actual tempo</span>
+        <span class="cost">₪500–4,000</span>
+      </div>
+      <div class="buy rv">
+        <span class="what">Batteries, chargers, power management</span>
+        <span class="why">Field equipment fails at the battery first</span>
+        <span class="cost">₪300–2,000</span>
+      </div>
+      <div class="buy rv">
+        <span class="what">Cables, connectors, mounts, consumables</span>
+        <span class="why">Unglamorous, constantly missing, never worth a requisition</span>
+        <span class="cost">₪100–1,000</span>
+      </div>
+    </div>
+    <p class="micro muted buys-note rv">STREET PRICES, REPRESENTATIVE CATEGORIES. ACTUAL PURCHASES ARE PUBLISHED AFTER DELIVERY. THE FUND DOES NOT BUY WEAPONS, AMMUNITION, OR ANYTHING REQUIRING A DEFENSE OR EXPORT LICENSE.</p>
+  </div>
+</section>
+
+<!-- ============ 04 STRAIGHT ANSWERS ============ -->
+<section class="band-dark" id="answers">
+  <div class="ghost" aria-hidden="true">04</div>
+  <div class="inner">
+    <div class="eyebrow rv">04 · Straight answers</div>
+    <h2 class="rv d1">A fund asking for money owes you blunt clarity</h2>
+    <div class="answers">
+      <div class="answer rv">
+        <h3><span class="x">/</span>Not tax-deductible</h3>
+        <p class="body">US and UK charitable frameworks were not built for buying equipment for another country's military units, and funds that pretend otherwise get shut down. <strong>This is a gift, not a deduction.</strong> If a formal structure ever becomes honest and workable, we will pursue it and announce it here.</p>
+      </div>
+      <div class="answer rv">
+        <h3><span class="x">/</span>Not official</h3>
+        <p class="body">The fund is an independent initiative, not affiliated with, endorsed by, or acting on behalf of the IDF. What keeps it grounded is simpler than a stamp: <strong>every delivery is coordinated with and accepted by unit leadership.</strong></p>
+      </div>
+      <div class="answer rv">
+        <h3><span class="x">/</span>No names, no faces</h3>
+        <p class="body">We never publish unit designations, locations, personnel identities, or specific capability gaps. Purchases are reported in generic terms, after delivery. <strong>When in doubt, we leave it out.</strong></p>
+      </div>
+      <div class="answer rv">
+        <h3><span class="x">/</span>No weapons</h3>
+        <p class="body">Nothing that fires, explodes, or requires a license. Printers, parts, tools, power. <strong>The boring equipment that lets capable people move.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 WHO ============ -->
+<section class="band-light" id="who">
+  <div class="ghost" aria-hidden="true">05</div>
+  <div class="inner">
+    <div class="eyebrow rv">05 · Who runs this</div>
+    <h2 class="rv d1">One person, on purpose</h2>
+    <div class="tick rv d1"></div>
+    <div class="prose rv d2" style="margin-top:32px">
+      <!-- TODO(Aryeh): replace with your preferred 2–3 sentence bio -->
+      <p>The fund is run by <strong>Aryeh Lev Mason</strong>, working directly with personnel in innovation-focused IDF units. It stays small deliberately: no office, no staff, no fundraising apparatus that eats the thing it feeds.</p>
+      <p>As the fund grows, people from inside those units will take on advisory roles, published here to the extent security allows.</p>
+    </div>
+    <div class="cta-row rv d3">
+      <a class="btn btn-ghost" href="/about/">MORE ABOUT THE FUND</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="band-dark cta-band">
+  <div class="inner">
+    <div class="eyebrow rv">The fund is open</div>
+    <h2 class="rv d1">First purchases are queued against first donations</h2>
+    <p class="lede rv d2">There is no track record yet, and we won't invent one. Early donors set the pace, and every shekel spent gets published.</p>
+    <div class="cta-row rv d3" style="justify-content:center">
+      <a class="btn btn-solid" href="/donate/">DONATE TO THE FUND</a>
+      <a class="btn btn-ghost" href="/faq/">READ THE FAQ</a>
+    </div>
+  </div>
+</section>
+
+<footer class="ftr">
+  <div class="inner">
+    <div class="ftr-grid">
+      <div>
+        <a class="wordmark" href="/">
+          <svg class="glyph" viewBox="0 0 22 22" aria-hidden="true">
+            <path d="M3 19 L7 19 L7 12 L12 12 L12 6 L15 6" fill="none" stroke="#5F7EA6" stroke-width="1.2" stroke-dasharray="2 2.5"/>
+            <path d="M3 19 L17 5" fill="none" stroke="#2BE3C5" stroke-width="2.2"/>
+            <path d="M17 5 L11.5 6.4 M17 5 L15.6 10.5" fill="none" stroke="#2BE3C5" stroke-width="2.2" stroke-linecap="square"/>
+          </svg>
+          <span class="wm-text">DEFENSE OF INNOVATION <span class="wm-fund">FUND</span></span>
+        </a>
+        <p class="ftr-mission">Small, targeted equipment for IDF ground-forces units, bought in days instead of months.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/donate/">Donate</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contact@defenseofinnovation.com">contact@defenseofinnovation.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="ftr-legal">© 2026 DEFENSE OF INNOVATION FUND. AN INDEPENDENT INITIATIVE — NOT AFFILIATED WITH, ENDORSED BY, OR ACTING ON BEHALF OF THE ISRAEL DEFENSE FORCES OR THE STATE OF ISRAEL. DONATIONS ARE NOT TAX-DEDUCTIBLE IN ANY JURISDICTION. THE FUND DOES NOT PURCHASE WEAPONS, AMMUNITION, OR LICENSE-CONTROLLED EQUIPMENT.</p>
+  </div>
+</footer>
+
+<script src="/js/site.js"></script>
+</body>
+</html>

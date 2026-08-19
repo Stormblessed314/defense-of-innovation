@@ -33,11 +33,11 @@ site says so bluntly and repeatedly — that candor is deliberate.
 
 ## Current state / open items
 
-1. Design pass three (2026-08-19): full-dark rebuild in the language of
-   aryehlevmason.com and kazidefense.com — one ink-navy field, blueprint
-   grid + grain + drifting glows, animated hero routes scene, two-clocks
-   comparison bars, receipt-style ledger, route-rail steps. Copy rewritten
-   donor-first (candor kept, apologizing cut). Awaiting Aryeh's review.
+1. Design pass four (2026-08-19): pass three rejected as cramped and
+   AI-flavoured. Rebuilt light and spacious — near-white field, deep-navy
+   hero/footer with aurora gradients, teal accent, Space Grotesk display.
+   Plain headlines, copy talks openly about the Israeli army (opsec rules
+   about unit names/locations still hold). Awaiting Aryeh's review.
 2. Payment rail: decide processor once a US account exists; then set
    `data-payment-url`.
 3. Real content: his bio (TODO comments in home/about), real example

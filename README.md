@@ -39,13 +39,13 @@ the page shows the "email us to give" interim block instead.
 
 ## Design system in one paragraph
 
-One continuous dark ink-navy field (#0A1322) with a fixed blueprint grid,
-film grain, and slow drifting glows for depth. Turquoise (#2EE0C3) is
-reserved for the fast-path idea and calls to action; brass (#C29E63) marks
-the ledger and money; slate blues carry bureaucracy and secondary text.
-Archivo for display and UI, IBM Plex Mono for eyebrows/data/legal,
-Newsreader italic for pull quotes and ghost numerals. Signature elements:
-the animated donor-to-unit routes scene in the hero, the two-clocks
-comparison bars, and the receipt-style purchase ledger. Logo mark is a
-placeholder glyph (dashed slow route behind a straight turquoise arrow) to
-be replaced by the real logo.
+Light, open field (#F7FAFC) with a deep-navy hero and footer (#07203C).
+Teal is the accent for action and the speed idea (#0E9F8C on light,
+#2BE3C8 on dark); soft aurora gradients and a faint dot grid give the
+dark bands depth. Space Grotesk for display and UI, Archivo for body,
+IBM Plex Mono for prices and small print (all self-hosted woff2).
+Signature elements: the drawn speed line under the hero headline, the
+army-requisition-vs-fund comparison bars, and the open purchase table.
+Generous spacing throughout — the brief after three rejected passes was
+"not cramped." Logo mark is a placeholder glyph to be replaced by the
+real logo.

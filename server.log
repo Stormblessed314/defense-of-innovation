@@ -87,3 +87,16 @@
 127.0.0.1 - - [19/Aug/2026 14:54:08] "GET /fonts/archivo-600.woff2 HTTP/1.1" 200 -
 127.0.0.1 - - [19/Aug/2026 14:54:08] "GET /fonts/archivo-500.woff2 HTTP/1.1" 200 -
 127.0.0.1 - - [19/Aug/2026 14:54:08] "GET /favicon.svg HTTP/1.1" 200 -
+127.0.0.1 - - [19/Aug/2026 15:26:23] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [19/Aug/2026 15:26:24] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [19/Aug/2026 15:26:24] "GET /css/site.css HTTP/1.1" 200 -
+127.0.0.1 - - [19/Aug/2026 15:26:24] "GET /js/site.js HTTP/1.1" 200 -
+127.0.0.1 - - [19/Aug/2026 15:26:24] "GET /fonts/space-grotesk-var.woff2 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Aug/2026 15:26:24] "GET /fonts/archivo-400.woff2 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Aug/2026 15:26:24] "GET /fonts/ibm-plex-mono-400.woff2 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Aug/2026 15:26:24] "GET /fonts/ibm-plex-mono-500.woff2 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Aug/2026 15:26:24] "GET /fonts/archivo-600.woff2 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Aug/2026 15:26:24] "GET /fonts/archivo-500.woff2 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Aug/2026 15:26:24] "GET /favicon.svg HTTP/1.1" 200 -
+127.0.0.1 - - [19/Aug/2026 15:26:34] "GET /donate/ HTTP/1.1" 200 -
+127.0.0.1 - - [19/Aug/2026 15:26:34] "GET /css/site.css HTTP/1.1" 304 -

@@ -1,4 +1,4 @@
-# Deploys site/ to Cloudflare Pages on every push to the default branch.
+# Deploys site/ to Cloudflare Pages on every push to the listed branches.
 # Requires two repository secrets (Settings → Secrets and variables → Actions):
 #   CLOUDFLARE_API_TOKEN   — token with "Cloudflare Pages: Edit" on the account
 #   CLOUDFLARE_ACCOUNT_ID  — the Cloudflare account id
@@ -16,11 +16,16 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
+      - name: Create Pages project (no-op if it exists)
+        uses: cloudflare/wrangler-action@v3
+        continue-on-error: true
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages project create defense-of-innovation --production-branch claude/defense-innovation-fund-site-ukfwms
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: |
-            pages project create defense-of-innovation --production-branch claude/defense-innovation-fund-site-ukfwms || true
-            pages deploy site --project-name defense-of-innovation
+          command: pages deploy site --project-name defense-of-innovation

@@ -20,9 +20,12 @@
     });
   }
 
-  /* scroll reveals */
-  var revealables = document.querySelectorAll('.rv, .tick');
-  if ('IntersectionObserver' in window) {
+  /* scroll reveals; ?all short-circuits them (used for rendering checks) */
+  var revealables = document.querySelectorAll('.rv');
+  var forceAll = /(?:\?|&)all(?:&|=|$)/.test(location.search);
+  if (forceAll || !('IntersectionObserver' in window)) {
+    revealables.forEach(function (el) { el.classList.add('vis'); });
+  } else {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -32,8 +35,6 @@
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
     revealables.forEach(function (el) { io.observe(el); });
-  } else {
-    revealables.forEach(function (el) { el.classList.add('vis'); });
   }
 
   /* donate panel: design-only until data-payment-url is set */

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Defense of Innovation Fund</title>
-<meta name="description" content="A donor-funded fast lane for the small equipment IDF ground-forces units can't wait months for. Independent, lean, published receipts.">
+<meta name="description" content="A donor-funded fast lane for the small equipment IDF ground-forces units need this week, not next quarter. Independent, lean, every purchase published.">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="stylesheet" href="/css/site.css">
 <meta property="og:title" content="Defense of Innovation Fund">
@@ -13,240 +13,269 @@
 <body>
 
 <header class="hdr">
-  <a class="wordmark" href="/">
-    <svg class="glyph" viewBox="0 0 22 22" aria-hidden="true">
-      <path d="M3 19 L7 19 L7 12 L12 12 L12 6 L15 6" fill="none" stroke="#5F7EA6" stroke-width="1.2" stroke-dasharray="2 2.5"/>
-      <path d="M3 19 L17 5" fill="none" stroke="#2BE3C5" stroke-width="2.2"/>
-      <path d="M17 5 L11.5 6.4 M17 5 L15.6 10.5" fill="none" stroke="#2BE3C5" stroke-width="2.2" stroke-linecap="square"/>
-    </svg>
-    <span class="wm-text">DEFENSE OF INNOVATION <span class="wm-fund">FUND</span></span>
-  </a>
-  <button class="nav-toggle" aria-expanded="false" aria-controls="nav">MENU</button>
-  <nav class="nav" id="nav">
-    <a href="/" class="act">Home</a>
-    <a href="/about/">About</a>
-    <a href="/faq/">FAQ</a>
-    <a href="/donate/" class="btn-donate">Donate</a>
-  </nav>
+  <div class="wrap">
+    <a class="wordmark" href="/">
+      <svg class="glyph" viewBox="0 0 22 22" aria-hidden="true">
+        <path d="M3 19 L7 19 L7 12 L12 12 L12 6 L15 6" fill="none" stroke="#5C6C85" stroke-width="1.2" stroke-dasharray="2 2.5"/>
+        <path d="M3 19 L17 5" fill="none" stroke="#2EE0C3" stroke-width="2.2"/>
+        <path d="M17 5 L11.5 6.4 M17 5 L15.6 10.5" fill="none" stroke="#2EE0C3" stroke-width="2.2" stroke-linecap="square"/>
+      </svg>
+      <span class="wm-text">DEFENSE OF INNOVATION <span class="wm-fund">FUND</span></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">MENU</button>
+    <nav class="nav" id="nav">
+      <a href="/" class="act">Home</a>
+      <a href="/about/">About</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/donate/" class="btn-donate">Donate</a>
+    </nav>
+  </div>
 </header>
 
+<main>
+
 <!-- ============ HERO ============ -->
-<section class="band-dark hero">
-  <div class="inner">
-    <div class="hero-grid">
-      <div>
-        <div class="eyebrow rv">An independent fund for IDF ground-forces units</div>
-        <h1 class="rv d1">Days,<br><span class="accent">not months.</span></h1>
-        <p class="lede rv d2">We buy the small equipment a unit can't wait a quarter for — a 3D printer, a spare part, a specific tool — with donor money, at retail, in the same week the need comes up.</p>
-        <div class="cta-row rv d3">
-          <a class="btn btn-solid" href="/donate/">Donate to the fund</a>
-          <a class="lnk" href="#gap">How it works</a>
-        </div>
-        <p class="hero-note rv d4">Donations are not tax-deductible. <a href="/faq/#deductible">The reason is in the FAQ.</a></p>
-      </div>
-      <div class="rv d2">
-        <svg class="routes" viewBox="0 0 520 340" role="img" aria-label="Diagram comparing a months-long standard requisition path against the fund's direct days-long path from donor to unit">
-          <rect class="node" x="26" y="286" width="8" height="8"/>
-          <text class="lbl" x="24" y="316">DONOR</text>
-          <rect class="node" x="478" y="40" width="8" height="8"/>
-          <text class="lbl" x="440" y="30">UNIT</text>
-          <path id="slowPath" class="slow-path" d="M30 290 L30 236 L118 236 L118 268 L196 268 L196 180 L138 180 L138 118 L262 118 L262 196 L342 196 L342 88 L296 88 L296 44 L482 44"/>
-          <rect class="stamp" x="112" y="230" width="12" height="12"/>
-          <rect class="stamp" x="190" y="262" width="12" height="12"/>
-          <rect class="stamp" x="132" y="112" width="12" height="12"/>
-          <rect class="stamp" x="256" y="190" width="12" height="12"/>
-          <rect class="stamp" x="336" y="82" width="12" height="12"/>
-          <rect class="stamp" x="290" y="38" width="12" height="12"/>
-          <text class="lbl" x="56" y="210">STANDARD REQUISITION · MONTHS</text>
-          <path id="fastPath" class="fast-path" d="M30 290 L482 44"/>
-          <text class="lbl-fast" x="222" y="150" transform="rotate(-28.5 222 150)">THE FUND · DAYS</text>
-          <circle class="slow-dot anim-slow" r="3.5"/>
-          <circle class="fast-dot anim-fast" r="4.5"/>
-        </svg>
-      </div>
-    </div>
+<section class="hero">
+  <div class="routes-scene" aria-hidden="true">
+    <svg viewBox="0 0 760 880" fill="none">
+      <style>
+        .rs-fast-dot{offset-path:path('M90 790 L640 110');animation:rsTravel 9s 2.6s cubic-bezier(0.5,0,0.3,1) infinite}
+        .rs-slow-dot{offset-path:path('M90 790 L90 660 L250 660 L250 730 L390 730 L390 560 L200 560 L200 420 L470 420 L470 540 L600 540 L600 300 L360 300 L360 180 L640 180 L640 110');animation:rsCrawl 9s 2.6s linear infinite}
+        @keyframes rsTravel{0%{offset-distance:0%;opacity:0}3%{opacity:1}16%{offset-distance:100%;opacity:1}20%{opacity:0}100%{offset-distance:100%;opacity:0}}
+        @keyframes rsCrawl{0%{offset-distance:0%;opacity:0}3%{opacity:1}92%{offset-distance:96%;opacity:1}100%{offset-distance:100%;opacity:0}}
+        @media (prefers-reduced-motion:reduce){.rs-fast-dot,.rs-slow-dot{animation:none;opacity:0}}
+      </style>
+      <!-- blueprint furniture -->
+      <circle cx="640" cy="110" r="52" stroke="rgba(148,178,220,0.12)" stroke-dasharray="3 6"/>
+      <circle cx="640" cy="110" r="86" stroke="rgba(148,178,220,0.07)" stroke-dasharray="2 8"/>
+      <circle cx="90" cy="790" r="40" stroke="rgba(148,178,220,0.12)" stroke-dasharray="3 6"/>
+      <line x1="20" y1="110" x2="560" y2="110" stroke="rgba(148,178,220,0.06)" stroke-dasharray="2 9"/>
+      <line x1="90" y1="120" x2="90" y2="740" stroke="rgba(148,178,220,0.06)" stroke-dasharray="2 9"/>
+      <!-- slow route: the requisition maze -->
+      <path class="slow-path" d="M90 790 L90 660 L250 660 L250 730 L390 730 L390 560 L200 560 L200 420 L470 420 L470 540 L600 540 L600 300 L360 300 L360 180 L640 180 L640 110"/>
+      <rect class="stamp" x="244" y="654" width="12" height="12"/>
+      <rect class="stamp" x="384" y="724" width="12" height="12"/>
+      <rect class="stamp" x="194" y="554" width="12" height="12"/>
+      <rect class="stamp" x="464" y="414" width="12" height="12"/>
+      <rect class="stamp" x="594" y="534" width="12" height="12"/>
+      <rect class="stamp" x="354" y="294" width="12" height="12"/>
+      <text class="svg-lbl" x="118" y="637">STANDARD REQUISITION · MONTHS</text>
+      <!-- fast route -->
+      <path class="fast-path" style="stroke-dasharray:940;stroke-dashoffset:940" d="M90 790 L640 110"/>
+      <text class="svg-lbl lit" x="330" y="486" transform="rotate(-51 330 486)">THE FUND · DAYS</text>
+      <!-- endpoints -->
+      <rect class="node-sq" x="85" y="785" width="10" height="10"/>
+      <text class="svg-lbl" x="76" y="842">DONOR</text>
+      <rect class="node-sq" x="635" y="105" width="10" height="10"/>
+      <text class="svg-lbl" x="614" y="60">UNIT</text>
+      <!-- travelers -->
+      <circle class="slow-dot rs-slow-dot" r="3.5" opacity="0"/>
+      <circle class="fast-dot rs-fast-dot" r="4.5" opacity="0"/>
+    </svg>
   </div>
-  <div class="facts">
-    <div class="facts-row rv">
-      <span>TYPICAL PURCHASE <b>₪100–6,000</b></span><span class="sep">/</span>
-      <span>TURNAROUND <b>UNDER A WEEK</b></span><span class="sep">/</span>
+  <div class="wrap hero-inner">
+    <div class="eyebrow">An independent fund for IDF ground-forces units</div>
+    <h1>Days,<br><span class="accent">not months.</span></h1>
+    <p class="lede">When a unit is missing a 3D printer, a spare part, or a specific tool, this fund buys it at retail and gets it there the same week — donor money, direct to the need, every purchase published.</p>
+    <div class="cta-row">
+      <a class="btn btn-solid" href="/donate/">Donate to the fund</a>
+      <a class="lnk" href="#gap">How it works</a>
+    </div>
+    <p class="hero-note">Donations are not tax-deductible. <a href="/faq/#deductible">The reason is in the FAQ.</a></p>
+  </div>
+  <div class="hud">
+    <div class="wrap">
+      <span>TYPICAL PURCHASE <b>₪100–6,000</b></span>
+      <span>TURNAROUND <b class="hb">UNDER A WEEK</b></span>
+      <span>OVERHEAD <b>PROCESSING FEES ONLY</b></span>
       <span>WEAPONS <b>NEVER</b></span>
     </div>
   </div>
 </section>
 
-<!-- ============ 01 THE PROBLEM ============ -->
-<section class="band-light" id="gap">
+<!-- ============ 01 THE GAP ============ -->
+<section class="band" id="gap">
+  <div class="glow blue drift" style="width:520px;height:520px;top:-120px;inset-inline-start:-160px"></div>
   <div class="ghost" aria-hidden="true">01</div>
-  <div class="inner sec">
+  <div class="wrap sec">
     <div class="sec-head">
-      <div class="eyebrow rv">01</div>
-      <h2 class="rv d1">The problem</h2>
-      <div class="tick rv d1"></div>
+      <div class="eyebrow rv">The gap</div>
+      <h2 class="rv d1">Built for divisions.<br>Blind to workshops.</h2>
     </div>
-    <div>
+    <div class="split">
       <div class="prose rv">
-        <p>Military procurement is built for scale: thousands of rifles, tons of rations, fleets of vehicles. It moves slowly on purpose, because at that scale mistakes are expensive. The trouble is that a ₪4,000 printer for a unit workshop goes through the same signatures and the same budget committees, and arrives months after it mattered.</p>
-        <p>The units this fund works with solve technical problems for the ground forces. They prototype fixtures, repair field equipment, and adapt commercial gear to military use. Ask them what slows the work down and the answer is rarely skill or motivation. It is usually a specific item, available in any store, sitting in a queue.</p>
+        <p>Military procurement is built for scale: thousands of rifles, tons of rations, fleets of vehicles. It moves slowly on purpose, because at that scale mistakes are expensive. But a ₪4,000 printer for a unit workshop goes through the same signatures and the same budget committees, and arrives months after it mattered.</p>
+        <p>The units this fund works with solve technical problems for the ground forces — prototyping fixtures, repairing field equipment, adapting commercial gear to military use. Ask what slows the work down and the answer is rarely skill or motivation. It is a specific item, available in any store, sitting in a queue.</p>
+        <p><strong>That gap is small enough for private donors to close.</strong> This fund exists to close it.</p>
       </div>
-      <div class="timeline rv d2">
-        <div class="tl-head"><div class="a">Standard requisition</div><div class="b">The fund</div></div>
-        <div class="tl-body">
-          <div class="tl-col a">
-            <div class="tl-item"><span class="t">DAY 0</span><span>Need comes up in the unit</span></div>
-            <div class="tl-item"><span class="t">WEEK 1</span><span>Request drafted, filed, passed up</span></div>
-            <div class="tl-item"><span class="t">WEEK 4</span><span>Waiting on approval, resubmitted</span></div>
-            <div class="tl-item"><span class="t">WEEK 10</span><span>Budget line debated</span></div>
-            <div class="tl-item"><span class="t">WEEK 16+</span><span>Ordered. Delivery follows eventually</span></div>
-          </div>
-          <div class="tl-col b">
-            <div class="tl-item"><span class="t">DAY 0</span><span>Need flagged by unit personnel</span></div>
-            <div class="tl-item"><span class="t">DAY 1</span><span>Checked with unit leadership</span></div>
-            <div class="tl-item"><span class="t">DAY 2</span><span>Ordered retail</span></div>
-            <div class="tl-item"><span class="t">DAY 6</span><span>Delivered, receipt on file</span></div>
-          </div>
+      <div class="duel rv d2" id="duel">
+        <div class="duel-title">One ₪4,000 printer · two clocks</div>
+        <div class="duel-row slow">
+          <div class="who"><span class="n">Standard requisition</span><span class="t">16+ WEEKS</span></div>
+          <div class="duel-bar"><i></i></div>
+          <div class="duel-stops"><span>Filed</span><span>Passed up</span><span>Resubmitted</span><span>Budget line</span><span>Ordered</span></div>
         </div>
-        <div class="tl-foot">Representative timeline for a small off-the-shelf purchase. Actual purchases are published as they happen.</div>
+        <div class="duel-row fast">
+          <div class="who"><span class="n">The fund</span><span class="t">6 DAYS</span></div>
+          <div class="duel-bar"><i></i></div>
+          <div class="duel-stops"><span>Flagged · verified · bought · delivered</span></div>
+        </div>
+        <p class="duel-foot">Representative timeline for a small off-the-shelf purchase. Actual purchases are published as they happen.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 02 HOW IT WORKS ============ -->
-<section class="band-light alt" id="model">
+<!-- ============ 02 HOW A GIFT MOVES ============ -->
+<section class="band raise" id="model">
+  <div class="glow teal drift" style="width:480px;height:480px;bottom:-140px;inset-inline-end:-120px"></div>
   <div class="ghost" aria-hidden="true">02</div>
-  <div class="inner sec">
-    <div class="sec-head">
-      <div class="eyebrow rv">02</div>
-      <h2 class="rv d1">How it works</h2>
-      <div class="tick rv d1"></div>
-    </div>
-    <div class="rows">
-      <div class="row rv">
-        <div class="no">i.</div>
-        <div>
-          <h3>Donations pool in one fund</h3>
+  <div class="wrap sec">
+    <div class="split">
+      <div class="sec-head" style="margin-bottom:0">
+        <div class="eyebrow rv">The model</div>
+        <h2 class="rv d1">How your gift moves</h2>
+        <p class="lede sec-note rv d2">Four stops between your card and a unit workshop. No committees, no warehouses, no middlemen taking a cut.</p>
+      </div>
+      <div class="steps rv d2">
+        <div class="step">
+          <span class="k">Stop 01 · Pool</span>
+          <h3>Your donation joins one fund</h3>
           <p class="body">No campaigns and no earmarks. Pooling is what makes the speed possible: when a need is verified, the money is already there.</p>
         </div>
-      </div>
-      <div class="row rv">
-        <div class="no">ii.</div>
-        <div>
-          <h3>Units flag what they're missing</h3>
-          <p class="body">Requests come from people serving in the units the fund grew out of. Each one is checked with unit leadership before anything is bought.</p>
+        <div class="step">
+          <span class="k">Stop 02 · Verify</span>
+          <h3>A need is flagged from inside</h3>
+          <p class="body">Requests come from people serving in the units the fund grew out of, and each one is confirmed with unit leadership before a shekel moves.</p>
         </div>
-      </div>
-      <div class="row rv">
-        <div class="no">iii.</div>
-        <div>
-          <h3>We buy retail and deliver</h3>
-          <p class="body">Off the shelf, usually within the week. The receipt is kept, and the purchase is published here without unit names or locations.</p>
+        <div class="step">
+          <span class="k">Stop 03 · Buy</span>
+          <h3>We purchase retail and deliver</h3>
+          <p class="body">Off the shelf, usually within the week, handed over to the unit through its own leadership.</p>
+        </div>
+        <div class="step">
+          <span class="k">Stop 04 · Publish</span>
+          <h3>The purchase goes in the ledger</h3>
+          <p class="body">Item, cost, and what it unblocked — posted on this site after delivery, with the receipt on file. Unit names and locations stay off the internet.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 03 WHAT THE MONEY BUYS ============ -->
-<section class="band-light" id="buys">
+<!-- ============ 03 THE LEDGER ============ -->
+<section class="band" id="buys">
+  <div class="glow brass drift" style="width:540px;height:540px;top:10%;inset-inline-end:-180px"></div>
   <div class="ghost" aria-hidden="true">03</div>
-  <div class="inner sec">
+  <div class="wrap sec">
     <div class="sec-head">
-      <div class="eyebrow rv">03</div>
-      <h2 class="rv d1">What the money buys</h2>
-      <div class="tick rv d1"></div>
+      <div class="eyebrow rv">The ledger</div>
+      <h2 class="rv d1">What your money buys</h2>
+      <p class="lede sec-note rv d2">Every purchase the fund makes will be published here, in this format, after delivery. These are the categories and street prices it works in.</p>
     </div>
-    <div>
-      <div class="buys">
-        <div class="buy rv">
-          <span class="what">FDM 3D printer with a year of filament</span>
-          <span class="cost">₪3,500–6,000</span>
-          <span class="why">For printing brackets, mounts, housings, and repair parts on base</span>
-        </div>
-        <div class="buy rv">
-          <span class="what">Spare parts for equipment in service</span>
-          <span class="cost">₪200–2,500</span>
-          <span class="why">Often one failed component is keeping a whole system idle</span>
-        </div>
-        <div class="buy rv">
-          <span class="what">Hand and power tools</span>
-          <span class="cost">₪500–4,000</span>
-          <span class="why">Workshop tools that match the pace the unit actually works at</span>
-        </div>
-        <div class="buy rv">
-          <span class="what">Batteries, chargers, power supplies</span>
-          <span class="cost">₪300–2,000</span>
-          <span class="why">Spares for gear that is already in daily use</span>
-        </div>
-        <div class="buy rv">
-          <span class="what">Connectors, cabling, mounts, consumables</span>
-          <span class="cost">₪100–1,000</span>
-          <span class="why">Cheap, constantly missing, never worth a formal request</span>
-        </div>
+    <div class="ledger rv d2">
+      <div class="ledger-head">
+        <span class="t">Purchase ledger</span>
+        <span class="r">Representative categories · retail prices</span>
       </div>
-      <p class="buys-note rv">Representative categories at street prices. Every actual purchase is published after delivery. The fund does not buy weapons, ammunition, or anything that needs a defense or export license.</p>
+      <div class="entry">
+        <div class="entry-line"><span class="what">FDM 3D printer, year of filament</span><span class="dots"></span><span class="cost">₪3,500–6,000</span></div>
+        <p class="why">Brackets, mounts, housings, and repair parts printed on base instead of waiting on a supplier.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-line"><span class="what">Spare parts for equipment in service</span><span class="dots"></span><span class="cost">₪200–2,500</span></div>
+        <p class="why">Often one failed component is keeping a whole system idle.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-line"><span class="what">Hand and power tools</span><span class="dots"></span><span class="cost">₪500–4,000</span></div>
+        <p class="why">Workshop tools that match the pace the unit actually works at.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-line"><span class="what">Batteries, chargers, power supplies</span><span class="dots"></span><span class="cost">₪300–2,000</span></div>
+        <p class="why">Spares for gear already in daily use.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-line"><span class="what">Connectors, cabling, mounts, consumables</span><span class="dots"></span><span class="cost">₪100–1,000</span></div>
+        <p class="why">Cheap, constantly missing, never worth a formal request.</p>
+      </div>
+      <div class="ledger-foot"><b>NEVER PURCHASED:</b> weapons, ammunition, weapon accessories, or anything requiring a defense or export license.</div>
     </div>
   </div>
 </section>
 
-<!-- ============ 04 BEFORE YOU GIVE ============ -->
-<section class="band-dark" id="answers">
+<!-- ============ PULL ============ -->
+<section class="band raise">
+  <div class="glow blue drift" style="width:600px;height:400px;top:20%;inset-inline-start:30%"></div>
+  <div class="wrap pull rv">
+    <p class="serif-line">The blocker is almost never skill or motivation. It is a <em>₪900 part</em> sitting in a queue.</p>
+    <div class="attr">Why the fund exists</div>
+  </div>
+</section>
+
+<!-- ============ 04 STRAIGHT ANSWERS ============ -->
+<section class="band" id="answers">
   <div class="ghost" aria-hidden="true">04</div>
-  <div class="inner sec">
+  <div class="wrap sec">
     <div class="sec-head">
-      <div class="eyebrow rv">04</div>
-      <h2 class="rv d1">Before you give</h2>
-      <div class="tick rv d1"></div>
+      <div class="eyebrow rv">Before you give</div>
+      <h2 class="rv d1">Straight answers</h2>
+      <p class="lede sec-note rv d2">A defense-adjacent fund asking for money owes you clarity up front. Here is ours.</p>
     </div>
-    <div class="answers">
-      <div class="answer rv">
+    <div class="answers rv d2">
+      <div class="answer">
+        <span class="k">Tax status</span>
         <h3>Donations are not tax-deductible</h3>
-        <p class="body">There is no charity registration behind this fund. US and UK charitable law makes registering one for foreign military equipment somewhere between slow and impossible, and we would rather stay fast and say so than stretch the truth. Treat a donation as a personal gift.</p>
+        <p class="body">There is no charity registration behind this fund. US and UK charitable law was not written for foreign military equipment, and we would rather stay fast and say so than stretch the truth. Treat a donation as a personal gift.</p>
       </div>
-      <div class="answer rv">
-        <h3>The fund is not part of the IDF</h3>
-        <p class="body">It is an independent initiative, not affiliated with or endorsed by the army. Deliveries are accepted by unit leadership, but no one in uniform runs this.</p>
+      <div class="answer">
+        <span class="k">Affiliation</span>
+        <h3>Independent of the IDF</h3>
+        <p class="body">The fund is not affiliated with or endorsed by the army. It works with the units, not around them: deliveries are checked with and accepted by unit leadership, but no one in uniform runs this.</p>
       </div>
-      <div class="answer rv">
+      <div class="answer">
+        <span class="k">Security</span>
         <h3>The vagueness is deliberate</h3>
         <p class="body">Unit names, locations, faces, and open equipment gaps stay off this site. Publishing what specific units lack would be a gift to the wrong audience, so purchases are described in general terms, after delivery.</p>
       </div>
-      <div class="answer rv">
+      <div class="answer">
+        <span class="k">Scope</span>
         <h3>No weapons of any kind</h3>
-        <p class="body">The fund does not buy weapons, ammunition, weapon accessories, or licensed equipment. Printers, parts, tools, batteries.</p>
+        <p class="body">The fund does not buy weapons, ammunition, weapon accessories, or licensed equipment. Printers, parts, tools, batteries. The line does not move.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ 05 WHO ============ -->
-<section class="band-light" id="who">
+<section class="band raise" id="who">
   <div class="ghost" aria-hidden="true">05</div>
-  <div class="inner sec">
-    <div class="sec-head">
-      <div class="eyebrow rv">05</div>
-      <h2 class="rv d1">Who runs it</h2>
-      <div class="tick rv d1"></div>
-    </div>
-    <div>
-      <div class="prose rv">
-        <!-- TODO(Aryeh): replace with your preferred bio -->
-        <p>The fund is run by <strong>Aryeh Lev Mason</strong>, working with personnel in innovation-focused IDF units. There is no staff and no office, and payment-processing fees are the only cost taken out of donations.</p>
-        <p>Advisors from inside the units will be added and named here as far as security allows.</p>
+  <div class="wrap sec tight">
+    <div class="split">
+      <div class="sec-head" style="margin-bottom:0">
+        <div class="eyebrow rv">Who runs it</div>
+        <h2 class="rv d1">A named person,<br>not a black box</h2>
       </div>
-      <div class="cta-row rv d1">
-        <a class="lnk" href="/about/">More about the fund</a>
+      <div>
+        <div class="prose rv d1">
+          <!-- TODO(Aryeh): replace with your preferred bio -->
+          <p>The fund is run by <strong>Aryeh Lev Mason</strong>, working directly with personnel in innovation-focused IDF units. There is no staff and no office; payment-processing fees are the only cost taken out of donations.</p>
+          <p>Questions before giving are welcome, and answers come from the person who runs the fund: <a href="mailto:contact@defenseofinnovation.com" style="color:var(--bone);border-bottom:1px solid var(--line)">contact@defenseofinnovation.com</a>.</p>
+        </div>
+        <div class="cta-row rv d2" style="margin-top:32px">
+          <a class="lnk" href="/about/">More about the fund</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ CTA ============ -->
-<section class="band-dark cta-band">
-  <div class="inner">
-    <div class="eyebrow rv">The fund is open</div>
-    <h2 class="rv d1">The first purchases will be published here as they happen</h2>
-    <p class="lede rv d2">There is no track record to show yet, and we won't pretend otherwise. If you'd rather watch the first reports land before giving, that's reasonable too.</p>
+<section class="cta-band band">
+  <div class="glow teal drift" style="width:640px;height:640px;top:-200px;inset-inline-start:calc(50% - 320px)"></div>
+  <div class="wrap sec">
+    <div class="eyebrow plain rv" style="justify-content:center;display:flex">The fund is open</div>
+    <h2 class="rv d1">Put the first entries in the ledger</h2>
+    <p class="lede rv d2">The fund is new and its ledger starts empty. Every purchase recorded from here on will be one that donors made possible: item, cost, and what it unblocked, published as it happens.</p>
     <div class="cta-row rv d3">
       <a class="btn btn-solid" href="/donate/">Donate to the fund</a>
       <a class="lnk" href="/faq/">Read the FAQ</a>
@@ -254,15 +283,17 @@
   </div>
 </section>
 
+</main>
+
 <footer class="ftr">
-  <div class="inner">
+  <div class="wrap">
     <div class="ftr-grid">
       <div>
         <a class="wordmark" href="/">
           <svg class="glyph" viewBox="0 0 22 22" aria-hidden="true">
-            <path d="M3 19 L7 19 L7 12 L12 12 L12 6 L15 6" fill="none" stroke="#5F7EA6" stroke-width="1.2" stroke-dasharray="2 2.5"/>
-            <path d="M3 19 L17 5" fill="none" stroke="#2BE3C5" stroke-width="2.2"/>
-            <path d="M17 5 L11.5 6.4 M17 5 L15.6 10.5" fill="none" stroke="#2BE3C5" stroke-width="2.2" stroke-linecap="square"/>
+            <path d="M3 19 L7 19 L7 12 L12 12 L12 6 L15 6" fill="none" stroke="#5C6C85" stroke-width="1.2" stroke-dasharray="2 2.5"/>
+            <path d="M3 19 L17 5" fill="none" stroke="#2EE0C3" stroke-width="2.2"/>
+            <path d="M17 5 L11.5 6.4 M17 5 L15.6 10.5" fill="none" stroke="#2EE0C3" stroke-width="2.2" stroke-linecap="square"/>
           </svg>
           <span class="wm-text">DEFENSE OF INNOVATION <span class="wm-fund">FUND</span></span>
         </a>

@@ -4,102 +4,116 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Donate — Defense of Innovation Fund</title>
-<meta name="description" content="One pooled fund. Money goes to the next verified need, and every purchase is published. Not tax-deductible, and we say so plainly.">
+<meta name="description" content="One pooled fund. Your gift goes to the next verified need, and every purchase is published with its cost. Not tax-deductible, and we say so plainly.">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="stylesheet" href="/css/site.css">
 </head>
 <body>
 
 <header class="hdr">
-  <a class="wordmark" href="/">
-    <svg class="glyph" viewBox="0 0 22 22" aria-hidden="true">
-      <path d="M3 19 L7 19 L7 12 L12 12 L12 6 L15 6" fill="none" stroke="#5F7EA6" stroke-width="1.2" stroke-dasharray="2 2.5"/>
-      <path d="M3 19 L17 5" fill="none" stroke="#2BE3C5" stroke-width="2.2"/>
-      <path d="M17 5 L11.5 6.4 M17 5 L15.6 10.5" fill="none" stroke="#2BE3C5" stroke-width="2.2" stroke-linecap="square"/>
-    </svg>
-    <span class="wm-text">DEFENSE OF INNOVATION <span class="wm-fund">FUND</span></span>
-  </a>
-  <button class="nav-toggle" aria-expanded="false" aria-controls="nav">MENU</button>
-  <nav class="nav" id="nav">
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/faq/">FAQ</a>
-    <a href="/donate/" class="btn-donate act">Donate</a>
-  </nav>
+  <div class="wrap">
+    <a class="wordmark" href="/">
+      <svg class="glyph" viewBox="0 0 22 22" aria-hidden="true">
+        <path d="M3 19 L7 19 L7 12 L12 12 L12 6 L15 6" fill="none" stroke="#5C6C85" stroke-width="1.2" stroke-dasharray="2 2.5"/>
+        <path d="M3 19 L17 5" fill="none" stroke="#2EE0C3" stroke-width="2.2"/>
+        <path d="M17 5 L11.5 6.4 M17 5 L15.6 10.5" fill="none" stroke="#2EE0C3" stroke-width="2.2" stroke-linecap="square"/>
+      </svg>
+      <span class="wm-text">DEFENSE OF INNOVATION <span class="wm-fund">FUND</span></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">MENU</button>
+    <nav class="nav" id="nav">
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/donate/" class="btn-donate act">Donate</a>
+    </nav>
+  </div>
 </header>
 
-<section class="band-dark page-head">
-  <div class="inner">
+<main>
+
+<section class="page-head band">
+  <div class="glow teal drift" style="width:560px;height:560px;top:-160px;inset-inline-end:-140px"></div>
+  <div class="wrap sec">
     <div class="eyebrow rv">Donate</div>
     <h1 class="rv d1">Fund the <span class="accent">next fix</span></h1>
-    <p class="lede rv d2">One pooled fund. Your money goes to the next verified need, and the purchase gets published here with its cost.</p>
+    <p class="lede rv d2">One pooled fund. Your money goes to the next verified need, and the purchase is published here with its cost.</p>
   </div>
 </section>
 
-<section class="band-light">
-  <div class="inner sec">
-    <div class="sec-head">
-      <div class="eyebrow rv">Give</div>
-      <h2 class="rv d1">Pick an amount</h2>
-      <div class="tick rv d1"></div>
-      <p class="muted rv d2" style="margin-top:26px;font-size:16.5px">For scale: $180 covers a serious cordless drill, $540 a batch of spare parts, $1,800 a 3D printer with a year of filament.</p>
-    </div>
-    <div>
-      <!-- Payment panel: design only for now. When a processor is live, set
-           data-payment-url on .pay and the button activates via site.js. -->
-      <div class="pay rv" data-payment-url="">
-        <div class="pay-toggle" role="group" aria-label="Donation frequency">
-          <button class="tg sel" data-freq="once">One-time</button>
-          <button class="tg" data-freq="monthly">Monthly</button>
-        </div>
-        <div class="amounts" role="group" aria-label="Suggested amounts">
-          <button class="amt" data-amount="18">$18</button>
-          <button class="amt" data-amount="54">$54</button>
-          <button class="amt sel" data-amount="180">$180</button>
-          <button class="amt" data-amount="540">$540</button>
-          <button class="amt" data-amount="1800">$1,800</button>
-          <label class="amt amt-custom"><span>$</span><input id="amt-other" inputmode="numeric" placeholder="Other" aria-label="Custom amount"></label>
-        </div>
-        <button class="btn btn-solid" id="give-btn">Continue to payment</button>
-        <p class="pay-note" id="give-interim">Card payments aren't live yet. To give now, write to <a href="mailto:contact@defenseofinnovation.com">contact@defenseofinnovation.com</a> and we'll arrange it directly.</p>
-        <p class="micro pay-trust">NOT TAX-DEDUCTIBLE · INDEPENDENT OF THE IDF · NO WEAPONS, EVER</p>
+<section class="band">
+  <div class="glow blue drift" style="width:500px;height:500px;bottom:-140px;inset-inline-start:-160px"></div>
+  <div class="wrap sec tight">
+    <div class="split">
+      <div>
+        <div class="eyebrow rv">Give</div>
+        <h2 class="rv d1" style="margin-top:16px">Pick an amount</h2>
+        <p class="scale-note rv d2">For scale: <b>$180</b> covers a serious cordless drill, <b>$540</b> a batch of spare parts, <b>$1,800</b> a 3D printer with a year of filament.</p>
+        <p class="body rv d2" style="margin-top:18px">Smaller gifts pull real weight here too — half the ledger's categories sit under ₪1,000.</p>
       </div>
-      <div class="rows" style="margin-top:clamp(44px,6vw,72px)">
-        <div class="row rv">
-          <div class="no">i.</div>
-          <div>
-            <h3>Where it goes</h3>
-            <p class="body">Into one pool, spent on the next verified need. No earmarks; pooling is what makes a same-week purchase possible.</p>
+      <div>
+        <!-- Payment panel: design only for now. When a processor is live, set
+             data-payment-url on .pay and the button activates via site.js. -->
+        <div class="pay rv" data-payment-url="">
+          <div class="pay-toggle" role="group" aria-label="Donation frequency">
+            <button class="tg sel" data-freq="once">One-time</button>
+            <button class="tg" data-freq="monthly">Monthly</button>
           </div>
-        </div>
-        <div class="row rv">
-          <div class="no">ii.</div>
-          <div>
-            <h3>What you'll see</h3>
-            <p class="body">Each purchase is published after delivery: the item, the cost, and what it fixed, without unit names or locations.</p>
+          <div class="amounts" role="group" aria-label="Suggested amounts">
+            <button class="amt" data-amount="18">$18</button>
+            <button class="amt" data-amount="54">$54</button>
+            <button class="amt sel" data-amount="180">$180</button>
+            <button class="amt" data-amount="540">$540</button>
+            <button class="amt" data-amount="1800">$1,800</button>
+            <label class="amt amt-custom"><span>$</span><input id="amt-other" inputmode="numeric" placeholder="Other" aria-label="Custom amount"></label>
           </div>
-        </div>
-        <div class="row rv">
-          <div class="no">iii.</div>
-          <div>
-            <h3>Larger gifts</h3>
-            <p class="body">Giving from a foundation or business, or thinking of a larger amount? Write to <a href="mailto:contact@defenseofinnovation.com" style="color:var(--pulse-ink)">contact@defenseofinnovation.com</a> and we'll talk it through first.</p>
-          </div>
+          <button class="btn btn-solid" id="give-btn">Continue to payment</button>
+          <p class="pay-note" id="give-interim">Card payments aren't live yet. To give now, write to <a href="mailto:contact@defenseofinnovation.com">contact@defenseofinnovation.com</a> and we'll arrange it directly.</p>
+          <p class="pay-trust">NOT TAX-DEDUCTIBLE · INDEPENDENT OF THE IDF · NO WEAPONS, EVER</p>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<section class="band raise">
+  <div class="wrap sec tight">
+    <div class="answers rv">
+      <div class="answer">
+        <span class="k">Where it goes</span>
+        <h3>Into one pool, out to the next need</h3>
+        <p class="body">No earmarks. Pooled money is what makes a same-week purchase possible: when a request is verified, the fund doesn't wait to raise for it.</p>
+      </div>
+      <div class="answer">
+        <span class="k">What you'll see</span>
+        <h3>Every purchase, published</h3>
+        <p class="body">Each purchase appears in the ledger after delivery — the item, the cost, and what it unblocked, without unit names or locations. Receipts stay on file.</p>
+      </div>
+      <div class="answer">
+        <span class="k">What it costs</span>
+        <h3>Overhead is processing fees</h3>
+        <p class="body">No staff, no office, no paid fundraising. Card-processing fees are the only cost taken out of a gift; the rest is spent on equipment.</p>
+      </div>
+      <div class="answer">
+        <span class="k">Larger gifts</span>
+        <h3>Talk to us first</h3>
+        <p class="body">Giving from a foundation or business, or considering a larger amount? Write to <a href="mailto:contact@defenseofinnovation.com" style="color:var(--bone);border-bottom:1px solid var(--line)">contact@defenseofinnovation.com</a> and we'll talk it through before any money moves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
 
 <footer class="ftr">
-  <div class="inner">
+  <div class="wrap">
     <div class="ftr-grid">
       <div>
         <a class="wordmark" href="/">
           <svg class="glyph" viewBox="0 0 22 22" aria-hidden="true">
-            <path d="M3 19 L7 19 L7 12 L12 12 L12 6 L15 6" fill="none" stroke="#5F7EA6" stroke-width="1.2" stroke-dasharray="2 2.5"/>
-            <path d="M3 19 L17 5" fill="none" stroke="#2BE3C5" stroke-width="2.2"/>
-            <path d="M17 5 L11.5 6.4 M17 5 L15.6 10.5" fill="none" stroke="#2BE3C5" stroke-width="2.2" stroke-linecap="square"/>
+            <path d="M3 19 L7 19 L7 12 L12 12 L12 6 L15 6" fill="none" stroke="#5C6C85" stroke-width="1.2" stroke-dasharray="2 2.5"/>
+            <path d="M3 19 L17 5" fill="none" stroke="#2EE0C3" stroke-width="2.2"/>
+            <path d="M17 5 L11.5 6.4 M17 5 L15.6 10.5" fill="none" stroke="#2EE0C3" stroke-width="2.2" stroke-linecap="square"/>
           </svg>
           <span class="wm-text">DEFENSE OF INNOVATION <span class="wm-fund">FUND</span></span>
         </a>

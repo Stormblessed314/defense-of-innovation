@@ -39,11 +39,13 @@ the page shows the "email us to give" interim block instead.
 
 ## Design system in one paragraph
 
-Dark ink-navy (#0A1930) hero and answer bands, light paper body. Turquoise
-(#2BE3C5, #0B8A76 on light) is reserved for the "fast path" idea and calls to
-action — don't spend it on decoration. Archivo for display and UI, IBM Plex
-Mono for eyebrows/data/legal, Newsreader for editorial passages. Film grain
-overlay, ghost section numerals, 1px ruled rows instead of card grids.
-Logo mark is a placeholder glyph (dashed slow route behind a straight
-turquoise arrow) to be replaced by the real logo; the wordmark is set in
-Archivo 600, tracked out.
+One continuous dark ink-navy field (#0A1322) with a fixed blueprint grid,
+film grain, and slow drifting glows for depth. Turquoise (#2EE0C3) is
+reserved for the fast-path idea and calls to action; brass (#C29E63) marks
+the ledger and money; slate blues carry bureaucracy and secondary text.
+Archivo for display and UI, IBM Plex Mono for eyebrows/data/legal,
+Newsreader italic for pull quotes and ghost numerals. Signature elements:
+the animated donor-to-unit routes scene in the hero, the two-clocks
+comparison bars, and the receipt-style purchase ledger. Logo mark is a
+placeholder glyph (dashed slow route behind a straight turquoise arrow) to
+be replaced by the real logo.

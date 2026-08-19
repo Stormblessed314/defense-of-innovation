@@ -201,6 +201,39 @@ strong{color:var(--head);font-weight:600}
   -webkit-mask-image:radial-gradient(ellipse at center,#000 30%,transparent 72%);
 }
 
+/* section line-art (route drawings behind light content) */
+.sec-art{position:absolute;pointer-events:none}
+.sec-art .art-slow{fill:none;stroke:rgba(14,46,82,0.2);stroke-width:1.6;stroke-dasharray:3 6;stroke-linejoin:round}
+.sec-art .art-stamp{fill:rgba(239,245,250,0.6);stroke:rgba(14,46,82,0.25);stroke-width:1.3}
+.sec-art .art-fast{fill:none;stroke:rgba(9,137,174,0.4);stroke-width:2.6;stroke-linecap:round}
+.sec-art .art-dot{fill:rgba(9,137,174,0.55)}
+.sec-art .art-ring{fill:none;stroke:rgba(9,137,174,0.3)}
+@media (max-width:900px){.sec-art{display:none}}
+
+/* compact route arc in subpage headers */
+.head-viz{
+  position:absolute;inset-inline-end:2vw;bottom:-20px;width:min(460px,36vw);
+  pointer-events:none;z-index:1;opacity:0.9;
+}
+.head-viz .hv-slow{fill:none;stroke:rgba(126,151,175,0.45);stroke-width:1.4;stroke-dasharray:3 6;stroke-linejoin:round}
+.head-viz .hv-stamp{fill:#0D2A4A;stroke:rgba(126,151,175,0.55);stroke-width:1.2}
+.head-viz .hv-fast{fill:none;stroke:url(#hgrad);stroke-width:3;stroke-linecap:round;filter:drop-shadow(0 0 7px rgba(67,207,242,0.45))}
+.head-viz .hv-dot{fill:#43CFF2}
+.head-viz .hv-ring{fill:none;stroke:rgba(67,207,242,0.35)}
+@media (max-width:900px){.head-viz{display:none}}
+
+/* stroke-icon tiles */
+.tile{
+  width:52px;height:52px;flex:none;border-radius:14px;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:rgba(9,137,174,0.08);border:1px solid rgba(9,137,174,0.22);
+  color:var(--teal-deep);
+}
+.tile svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.on-dark .tile,.band-dark .tile{
+  background:rgba(67,207,242,0.08);border-color:rgba(67,207,242,0.28);color:var(--teal-bright);
+}
+
 /* white panel card for content sitting on tinted/washed bands */
 .panel{
   background:#fff;border:1px solid var(--line);border-radius:20px;
@@ -360,11 +393,23 @@ strong{color:var(--head);font-weight:600}
 /* ============================================================
    STEPS — spacious numbered list
    ============================================================ */
-.steps{display:grid;gap:clamp(44px,6vw,64px);counter-reset:step}
+.steps{display:grid;gap:clamp(44px,6vw,64px);counter-reset:step;position:relative}
+/* the route rail connecting the four stops */
+.steps::before{
+  content:"";position:absolute;inset-block:26px;inset-inline-start:-46px;width:2.5px;
+  background:linear-gradient(180deg,#4D9DE0,var(--teal) 60%,rgba(9,137,174,0.15));
+  border-radius:999px;
+}
 .step{
   display:grid;grid-template-columns:88px minmax(0,1fr);gap:clamp(24px,4vw,48px);
-  align-items:start;
+  align-items:start;position:relative;
 }
+.step::before{
+  content:"";position:absolute;inset-inline-start:-53px;top:12px;width:12px;height:12px;
+  border-radius:50%;border:2.5px solid var(--teal);background:#fff;
+  box-shadow:0 0 0 5px rgba(9,137,174,0.12);
+}
+@media (max-width:900px){.steps::before,.step::before{display:none}}
 @media (max-width:640px){.step{grid-template-columns:56px minmax(0,1fr)}}
 .step .num{
   counter-increment:step;
@@ -384,9 +429,9 @@ strong{color:var(--head);font-weight:600}
 .buys.panel .buy:last-of-type{border-bottom:0}
 .buys.panel .buy{padding-inline:8px}
 .buy{
-  display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) auto;
-  gap:clamp(20px,3vw,48px);align-items:baseline;
-  padding-block:clamp(26px,3.5vw,36px);border-bottom:1px solid var(--line);
+  display:grid;grid-template-columns:auto minmax(0,1.3fr) minmax(0,1fr) auto;
+  gap:clamp(18px,2.6vw,40px);align-items:center;
+  padding-block:clamp(22px,3vw,30px);border-bottom:1px solid var(--line);
   transition:background 0.25s;
 }
 .buy:hover{background:rgba(9,137,174,0.04)}
@@ -394,8 +439,8 @@ strong{color:var(--head);font-weight:600}
 .buy .why{font-size:0.98rem;color:var(--soft)}
 .buy .cost{font-family:var(--mono);font-size:1rem;color:var(--teal-deep);white-space:nowrap;justify-self:end}
 @media (max-width:760px){
-  .buy{grid-template-columns:minmax(0,1fr) auto}
-  .buy .why{grid-column:1 / -1;margin-top:-6px}
+  .buy{grid-template-columns:auto minmax(0,1fr) auto}
+  .buy .why{grid-column:2 / -1;margin-top:-8px}
 }
 .buys-note{margin-top:26px;font-size:0.95rem;color:var(--soft)}
 .buys-note strong{color:var(--head)}
@@ -410,6 +455,7 @@ strong{color:var(--head);font-weight:600}
   padding-top:clamp(36px,4vw,48px);border-top:1px solid var(--line);
 }
 @media (max-width:760px){.know-item{grid-template-columns:1fr;gap:14px}}
+.know-head{display:flex;align-items:center;gap:18px}
 .know-item h3{font-size:1.5rem}
 .band-dark .know-item{border-top-color:var(--line-dark)}
 .band-dark .know-item h3{color:#F2F7FB}

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Donate — Defense of Innovation Fund</title>
-<meta name="description" content="Give to one pooled fund. Small equipment for IDF ground-forces units, bought in days. Not tax-deductible, and we say so plainly.">
+<meta name="description" content="One pooled fund. Money goes to the next verified need, and every purchase is published. Not tax-deductible, and we say so plainly.">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="stylesheet" href="/css/site.css">
 </head>
@@ -21,10 +21,10 @@
   </a>
   <button class="nav-toggle" aria-expanded="false" aria-controls="nav">MENU</button>
   <nav class="nav" id="nav">
-    <a href="/">HOME</a>
-    <a href="/about/">ABOUT</a>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
     <a href="/faq/">FAQ</a>
-    <a href="/donate/" class="btn-donate act">DONATE</a>
+    <a href="/donate/" class="btn-donate act">Donate</a>
   </nav>
 </header>
 
@@ -32,56 +32,62 @@
   <div class="inner">
     <div class="eyebrow rv">Donate</div>
     <h1 class="rv d1">Fund the <span class="accent">next fix</span></h1>
-    <p class="lede rv d2">One pooled fund. When a unit hits a wall that a small purchase can knock down, the money is already there. You'll see what it bought.</p>
+    <p class="lede rv d2">One pooled fund. Your money goes to the next verified need, and the purchase gets published here with its cost.</p>
   </div>
 </section>
 
 <section class="band-light">
-  <div class="inner">
-    <div class="eyebrow rv">Pick a number</div>
-    <h2 class="rv d1">Give what a fix costs</h2>
-    <div class="tick rv d1"></div>
-    <div class="amounts rv d2" role="group" aria-label="Suggested donation amounts">
-      <button class="amt" data-amount="18">$18</button>
-      <button class="amt" data-amount="54">$54</button>
-      <button class="amt" data-amount="180">$180</button>
-      <button class="amt" data-amount="540">$540</button>
-      <button class="amt" data-amount="1800">$1,800</button>
-      <button class="amt" data-amount="">Another amount</button>
+  <div class="inner sec">
+    <div class="sec-head">
+      <div class="eyebrow rv">Give</div>
+      <h2 class="rv d1">Pick an amount</h2>
+      <div class="tick rv d1"></div>
+      <p class="muted rv d2" style="margin-top:26px;font-size:16.5px">For scale: $180 covers a serious cordless drill, $540 a batch of spare parts, $1,800 a 3D printer with a year of filament.</p>
     </div>
-    <p class="muted rv d2" style="margin-top:18px;font-size:15px">For scale: $180 covers a serious cordless drill, $540 a batch of spare parts, $1,800 a 3D printer with a season of filament.</p>
-
-    <!-- Set data-payment-url to the live payment link (Stripe Payment Link, etc.)
-         to activate the button. While empty, the interim block shows instead. -->
-    <div class="donate-panel rv d3" data-payment-url="">
-      <button class="btn btn-solid" id="give-btn">GIVE TO THE FUND</button>
-      <div class="interim" id="give-interim">
-        Card payments are being set up now. To give today, write to
-        <a href="mailto:contact@defenseofinnovation.com">contact@defenseofinnovation.com</a>
-        and we'll arrange it directly.
+    <div>
+      <!-- Payment panel: design only for now. When a processor is live, set
+           data-payment-url on .pay and the button activates via site.js. -->
+      <div class="pay rv" data-payment-url="">
+        <div class="pay-toggle" role="group" aria-label="Donation frequency">
+          <button class="tg sel" data-freq="once">One-time</button>
+          <button class="tg" data-freq="monthly">Monthly</button>
+        </div>
+        <div class="amounts" role="group" aria-label="Suggested amounts">
+          <button class="amt" data-amount="18">$18</button>
+          <button class="amt" data-amount="54">$54</button>
+          <button class="amt sel" data-amount="180">$180</button>
+          <button class="amt" data-amount="540">$540</button>
+          <button class="amt" data-amount="1800">$1,800</button>
+          <label class="amt amt-custom"><span>$</span><input id="amt-other" inputmode="numeric" placeholder="Other" aria-label="Custom amount"></label>
+        </div>
+        <button class="btn btn-solid" id="give-btn">Continue to payment</button>
+        <p class="pay-note" id="give-interim">Card payments aren't live yet. To give now, write to <a href="mailto:contact@defenseofinnovation.com">contact@defenseofinnovation.com</a> and we'll arrange it directly.</p>
+        <p class="micro pay-trust">NOT TAX-DEDUCTIBLE · INDEPENDENT OF THE IDF · NO WEAPONS, EVER</p>
       </div>
-      <p class="micro">DONATIONS ARE NOT TAX-DEDUCTIBLE. THE FUND IS AN INDEPENDENT INITIATIVE, NOT AFFILIATED WITH THE IDF. <a href="/faq/" style="color:var(--pulse-ink)">FULL FAQ</a></p>
+      <div class="rows" style="margin-top:clamp(44px,6vw,72px)">
+        <div class="row rv">
+          <div class="no">i.</div>
+          <div>
+            <h3>Where it goes</h3>
+            <p class="body">Into one pool, spent on the next verified need. No earmarks; pooling is what makes a same-week purchase possible.</p>
+          </div>
+        </div>
+        <div class="row rv">
+          <div class="no">ii.</div>
+          <div>
+            <h3>What you'll see</h3>
+            <p class="body">Each purchase is published after delivery: the item, the cost, and what it fixed, without unit names or locations.</p>
+          </div>
+        </div>
+        <div class="row rv">
+          <div class="no">iii.</div>
+          <div>
+            <h3>Larger gifts</h3>
+            <p class="body">Giving from a foundation or business, or thinking of a larger amount? Write to <a href="mailto:contact@defenseofinnovation.com" style="color:var(--pulse-ink)">contact@defenseofinnovation.com</a> and we'll talk it through first.</p>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="rows" style="margin-top:clamp(48px,7vw,80px)">
-      <div class="row rv">
-        <div class="no">01</div>
-        <h3>Your money pools</h3>
-        <p class="body">No earmarks and no campaign targets. Pooled funds are what let a purchase happen the day a need is verified instead of the month a goal bar fills.</p>
-      </div>
-      <div class="row rv">
-        <div class="no">02</div>
-        <h3>A verified need spends it</h3>
-        <p class="body">Needs are flagged by personnel inside innovation-focused units and checked with unit leadership before a shekel moves. <strong>Never weapons, ammunition, or license-controlled equipment.</strong></p>
-      </div>
-      <div class="row rv">
-        <div class="no">03</div>
-        <h3>You see the receipt</h3>
-        <p class="body">Every purchase is published after delivery: the item, the cost, and what it unblocked, described without identifying any unit or person. The books stay small enough to read in one sitting.</p>
-      </div>
-    </div>
-
-    <p class="muted rv" style="margin-top:40px;font-size:15px">Considering a larger gift, or giving from a foundation or business? Write to <a href="mailto:contact@defenseofinnovation.com" style="color:var(--pulse-ink)">contact@defenseofinnovation.com</a> and we'll talk it through properly.</p>
   </div>
 </section>
 
@@ -97,7 +103,7 @@
           </svg>
           <span class="wm-text">DEFENSE OF INNOVATION <span class="wm-fund">FUND</span></span>
         </a>
-        <p class="ftr-mission">Small, targeted equipment for IDF ground-forces units, bought in days instead of months.</p>
+        <p class="ftr-mission">Small equipment for IDF ground-forces units, bought in days instead of months.</p>
       </div>
       <div>
         <h4>Site</h4>
@@ -114,7 +120,7 @@
         </ul>
       </div>
     </div>
-    <p class="ftr-legal">© 2026 DEFENSE OF INNOVATION FUND. AN INDEPENDENT INITIATIVE — NOT AFFILIATED WITH, ENDORSED BY, OR ACTING ON BEHALF OF THE ISRAEL DEFENSE FORCES OR THE STATE OF ISRAEL. DONATIONS ARE NOT TAX-DEDUCTIBLE IN ANY JURISDICTION. THE FUND DOES NOT PURCHASE WEAPONS, AMMUNITION, OR LICENSE-CONTROLLED EQUIPMENT.</p>
+    <p class="ftr-legal">© 2026 Defense of Innovation Fund. An independent initiative, not affiliated with, endorsed by, or acting on behalf of the Israel Defense Forces or the State of Israel. Donations are not tax-deductible in any jurisdiction. The fund does not purchase weapons, ammunition, or license-controlled equipment.</p>
   </div>
 </footer>
 

@@ -36,36 +36,56 @@
     revealables.forEach(function (el) { el.classList.add('vis'); });
   }
 
-  /* donate page: amount chips + payment link wiring */
-  var panel = document.querySelector('[data-payment-url]');
-  if (panel) {
-    var url = (panel.getAttribute('data-payment-url') || '').trim();
+  /* donate panel: design-only until data-payment-url is set */
+  var pay = document.querySelector('.pay[data-payment-url]');
+  if (pay) {
+    var url = (pay.getAttribute('data-payment-url') || '').trim();
     var btn = document.getElementById('give-btn');
     var interim = document.getElementById('give-interim');
-    var selected = '';
+    var other = document.getElementById('amt-other');
+    var freq = 'once';
+    var selected = '180';
 
-    document.querySelectorAll('.amt').forEach(function (chip) {
-      chip.addEventListener('click', function () {
-        document.querySelectorAll('.amt').forEach(function (c) { c.classList.remove('sel'); });
-        chip.classList.add('sel');
-        selected = chip.getAttribute('data-amount') || '';
+    pay.querySelectorAll('.tg').forEach(function (t) {
+      t.addEventListener('click', function () {
+        pay.querySelectorAll('.tg').forEach(function (x) { x.classList.remove('sel'); });
+        t.classList.add('sel');
+        freq = t.getAttribute('data-freq') || 'once';
       });
     });
+
+    pay.querySelectorAll('.amt[data-amount]').forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        pay.querySelectorAll('.amt').forEach(function (c) { c.classList.remove('sel'); });
+        chip.classList.add('sel');
+        selected = chip.getAttribute('data-amount') || '';
+        if (other) other.value = '';
+      });
+    });
+
+    if (other) {
+      other.addEventListener('focus', function () {
+        pay.querySelectorAll('.amt').forEach(function (c) { c.classList.remove('sel'); });
+        other.closest('.amt').classList.add('sel');
+        selected = '';
+      });
+      other.addEventListener('input', function () {
+        selected = other.value.replace(/[^0-9]/g, '');
+      });
+    }
 
     if (url && btn) {
       if (interim) interim.style.display = 'none';
       btn.addEventListener('click', function () {
         var target = url;
-        if (selected) {
-          target += (url.indexOf('?') === -1 ? '?' : '&') + 'amount=' + encodeURIComponent(selected);
-        }
+        var params = [];
+        if (selected) params.push('amount=' + encodeURIComponent(selected));
+        if (freq) params.push('frequency=' + encodeURIComponent(freq));
+        if (params.length) target += (url.indexOf('?') === -1 ? '?' : '&') + params.join('&');
         window.open(target, '_blank', 'noopener');
       });
     } else if (btn) {
-      btn.textContent = 'CARD PAYMENTS OPENING SOON';
       btn.setAttribute('disabled', 'disabled');
-      btn.style.opacity = '.45';
-      btn.style.cursor = 'default';
     }
   }
 })();

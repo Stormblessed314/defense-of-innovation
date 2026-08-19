@@ -49,6 +49,12 @@ a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 ::selection{background:var(--teal);color:#fff}
 
+/* film grain, very light */
+body::after{
+  content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:0.4;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.05 0 0 0 0 0.15 0 0 0 0 0.25 0 0 0 0.03 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
 .wrap{max-width:var(--max);margin:0 auto;padding-inline:32px}
 @media (max-width:640px){.wrap{padding-inline:22px}}
 
@@ -65,7 +71,13 @@ strong{color:var(--head);font-weight:600}
 .kicker{
   font-family:var(--disp);font-weight:500;font-size:0.95rem;
   letter-spacing:0.02em;color:var(--teal-deep);
+  display:inline-flex;align-items:center;gap:12px;
 }
+.kicker::before{
+  content:"";width:30px;height:3px;border-radius:999px;flex:none;
+  background:linear-gradient(90deg,#4D9DE0,var(--teal));
+}
+.on-dark .kicker::before{background:linear-gradient(90deg,#4D9DE0,var(--teal-bright))}
 
 /* ---------- header ---------- */
 .hdr{
@@ -162,14 +174,48 @@ strong{color:var(--head);font-weight:600}
 .prose p+p{margin-top:1.35em}
 
 /* soft ambient wash on light bands */
-.wash{position:absolute;pointer-events:none;border-radius:50%;filter:blur(110px);opacity:0.55}
-.wash.a{background:radial-gradient(circle,rgba(43,227,200,0.12),transparent 65%)}
-.wash.b{background:radial-gradient(circle,rgba(31,94,220,0.09),transparent 65%)}
+.wash{position:absolute;pointer-events:none;border-radius:50%;filter:blur(110px);opacity:0.8}
+.wash.a{background:radial-gradient(circle,rgba(43,227,200,0.2),transparent 65%)}
+.wash.b{background:radial-gradient(circle,rgba(77,157,224,0.2),transparent 65%)}
 .wash.drift{animation:washdrift 30s ease-in-out infinite alternate}
 @keyframes washdrift{
   from{transform:translate(0,0) scale(1)}
   to{transform:translate(-60px,50px) scale(1.12)}
 }
+
+/* decorative concentric rings for light bands */
+.rings{position:absolute;pointer-events:none;border:1px solid rgba(14,46,82,0.09);border-radius:50%}
+.rings::before,.rings::after{
+  content:"";position:absolute;inset:12%;border:1px solid rgba(14,46,82,0.07);border-radius:50%;
+}
+.rings::after{inset:26%;border-color:rgba(14,159,140,0.12);border-style:dashed}
+.rings.spin::after{animation:ringspin 60s linear infinite}
+@keyframes ringspin{to{transform:rotate(360deg)}}
+
+/* faint dot-grid patch */
+.dots{
+  position:absolute;pointer-events:none;
+  background-image:radial-gradient(rgba(14,46,82,0.16) 1.3px,transparent 1.3px);
+  background-size:22px 22px;
+  mask-image:radial-gradient(ellipse at center,#000 30%,transparent 72%);
+  -webkit-mask-image:radial-gradient(ellipse at center,#000 30%,transparent 72%);
+}
+
+/* white panel card for content sitting on tinted/washed bands */
+.panel{
+  background:#fff;border:1px solid var(--line);border-radius:20px;
+  padding:clamp(26px,4vw,44px);
+  box-shadow:0 24px 70px -34px rgba(7,32,60,0.28);
+  position:relative;overflow:hidden;
+}
+.panel::before{
+  content:"";position:absolute;inset-inline:0;top:0;height:4px;
+  background:linear-gradient(90deg,#4D9DE0,var(--teal),var(--teal-bright));
+}
+
+/* soft gradient variant for light bands */
+.band-grad{background:linear-gradient(180deg,var(--paper) 0%,#E9F3F4 55%,var(--paper) 100%)}
+.band-grad-b{background:linear-gradient(180deg,var(--paper) 0%,#E9EFF8 55%,var(--paper) 100%)}
 
 /* ============================================================
    HERO — deep navy, aurora drift, one drawn line
@@ -193,6 +239,13 @@ strong{color:var(--head);font-weight:600}
   mask-image:radial-gradient(ellipse 90% 80% at 60% 40%,#000 30%,transparent 75%);
   -webkit-mask-image:radial-gradient(ellipse 90% 80% at 60% 40%,#000 30%,transparent 75%);
 }
+.hero-grid{
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:minmax(0,6.4fr) minmax(0,5.6fr);
+  gap:clamp(40px,5vw,70px);align-items:center;
+}
+.hero-grid h1{font-size:clamp(2.3rem,4.4vw,3.7rem)}
+@media (max-width:1000px){.hero-grid{grid-template-columns:1fr}}
 .hero-inner{position:relative;z-index:2;max-width:880px}
 .hero .kicker{color:var(--teal-bright);animation:heroup 1s cubic-bezier(0.2,0.7,0.2,1) both}
 .hero h1{color:#F4F8FB;margin-top:24px;animation:heroup 1s 0.12s cubic-bezier(0.2,0.7,0.2,1) both}
@@ -220,6 +273,52 @@ strong{color:var(--head);font-weight:600}
 @media (prefers-reduced-motion:reduce){
   .speedline path{animation:none;stroke-dashoffset:0}
   .speedline .tip{animation:none;opacity:1}
+}
+
+/* ---------- hero route graphic ---------- */
+.hero-viz{position:relative;animation:heroup 1.1s 0.5s cubic-bezier(0.2,0.7,0.2,1) both}
+.hero-viz svg{width:100%;height:auto;display:block}
+@media (max-width:1000px){.hero-viz{max-width:440px;margin:26px auto 0}}
+@media (prefers-reduced-motion:reduce){.hero-viz{animation:none}}
+.viz-slow{fill:none;stroke:#41597A;stroke-width:1.6;stroke-dasharray:3 6;stroke-linejoin:round}
+.viz-stop rect{fill:#0D2A4A;stroke:#41597A;stroke-width:1.3;rx:5}
+.viz-stop text{font-family:var(--mono);font-size:9.5px;letter-spacing:0.14em;fill:#7E97AF}
+.viz-fast{
+  fill:none;stroke:url(#vizgrad);stroke-width:3.6;stroke-linecap:round;
+  stroke-dasharray:820;stroke-dashoffset:820;
+  animation:vizdraw 1.8s 1.1s cubic-bezier(0.4,0,0.2,1) forwards;
+  filter:drop-shadow(0 0 8px rgba(43,227,200,0.5));
+}
+@keyframes vizdraw{to{stroke-dashoffset:0}}
+.viz-node rect{fill:#0D2A4A;stroke:rgba(43,227,200,0.55);stroke-width:1.3}
+.viz-node text{font-family:var(--disp);font-weight:600;font-size:13px;letter-spacing:0.14em;fill:#E7F0F7}
+.viz-tag{font-family:var(--mono);font-size:10.5px;letter-spacing:0.2em}
+.viz-tag.slowt{fill:#5E7893}
+.viz-tag.fastt{fill:var(--teal-bright)}
+.viz-ring{fill:none;stroke:rgba(43,227,200,0.28)}
+.viz-ring.r2{stroke:rgba(126,151,175,0.2);stroke-dasharray:2 7}
+.viz-pulse{
+  fill:none;stroke:rgba(43,227,200,0.5);
+  transform-box:fill-box;transform-origin:center;
+  animation:vizpulse 3s ease-out infinite;
+}
+@keyframes vizpulse{0%{transform:scale(0.5);opacity:0.9}80%{transform:scale(1.6);opacity:0}100%{opacity:0}}
+.viz-comet{
+  fill:#EFFFFB;filter:drop-shadow(0 0 7px rgba(43,227,200,0.95));
+  offset-path:path('M84 560 C 210 520 240 330 476 96');
+  animation:vizcomet 4.2s 1.4s cubic-bezier(0.55,0,0.35,1) infinite;opacity:0;
+}
+@keyframes vizcomet{0%{offset-distance:0%;opacity:0}6%{opacity:1}42%{offset-distance:100%;opacity:1}50%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
+.viz-crawl{
+  fill:#7E97AF;
+  offset-path:path('M84 560 L84 470 L208 470 L208 530 L330 530 L330 388 L170 388 L170 258 L352 258 L352 320 L476 320 L476 96');
+  animation:vizcrawl 15s 1.4s linear infinite;opacity:0;
+}
+@keyframes vizcrawl{0%{offset-distance:0%;opacity:0}3%{opacity:0.9}96%{offset-distance:99%;opacity:0.9}100%{offset-distance:100%;opacity:0}}
+@media (prefers-reduced-motion:reduce){
+  .viz-fast{animation:none;stroke-dashoffset:0}
+  .viz-comet,.viz-crawl{animation:none;opacity:0}
+  .viz-pulse{animation:none;opacity:0}
 }
 
 /* facts row under hero copy */
@@ -281,6 +380,9 @@ strong{color:var(--head);font-weight:600}
    LEDGER TABLE — open rows
    ============================================================ */
 .buys{border-top:1px solid var(--line)}
+.buys.panel{border-top:1px solid var(--line)}
+.buys.panel .buy:last-of-type{border-bottom:0}
+.buys.panel .buy{padding-inline:8px}
 .buy{
   display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) auto;
   gap:clamp(20px,3vw,48px);align-items:baseline;

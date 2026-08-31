@@ -1,89 +1,119 @@
 # Handoff — Defense of Innovation Fund site
 
-For a fresh Claude Code session running locally on Aryeh's Mac. Read this
-first; it holds the project state, the decisions already made, and what's
-still open. Aryeh's general working rules live in the Lionheart repo's
-CLAUDE.md (writing style section applies to ALL site copy — no AI-sounding
-prose, no seesaw aphorisms, no formulaic triads).
+For a fresh Claude Code session on Aryeh's Mac. Read this first. Aryeh's
+general working rules live in ~/.claude/CLAUDE.md (the writing-style
+section applies to ALL site copy). A richer session memory exists at
+~/.claude/projects/-Users-aryehlevmason-Claude-Code/memory/defense-of-innovation-site.md.
 
 ## What this is
 
-A donation site for the Defense of Innovation Fund: an independent,
-donor-funded initiative that buys small equipment (3D printers, spare
-parts, tools — never weapons) for IDF ground-forces units in days instead
-of the months a formal requisition takes. Run by Aryeh Lev Mason, named on
-the site. Audience: US/UK pro-Israel donors. Not tax-deductible, and the
-site says so bluntly and repeatedly — that candor is deliberate.
+Donation site for the Defense of Innovation Fund: an independent,
+donor-funded initiative run by Aryeh Lev Mason that buys small
+off-the-shelf equipment (3D printers, ink and filament, spare parts,
+tools — never weapons) for a wide variety of Israeli army units, in days
+instead of the 8+ weeks a formal requisition takes. Audience: US/UK
+pro-Israel donors. Live at https://defense-of-innovation.pages.dev.
 
-## Decisions already settled (don't re-ask)
+## Copy rules (from Aryeh + an external audit he ruled on — binding)
 
-- Multi-page static site, no build step, no backend. Pooled fund, no
-  earmarks or per-project campaign bars.
-- Money lands in US accounts eventually (Stripe becomes possible then);
-  nothing is wired yet. The donate page has a designed payment panel that
-  stays inert until `data-payment-url` is set on the `.pay` div in
-  `site/donate/index.html` (site.js activates the button automatically).
-- Framing: lean into speed-vs-bureaucracy but never hostile to the IDF;
-  always "independent, not affiliated"; deliveries coordinated with unit
-  leadership.
-- Opsec: no unit names, locations, faces, or open equipment gaps anywhere.
-- Aryeh is making the logo himself elsewhere. The current SVG glyph
-  (dashed slow route + straight turquoise arrow) is a placeholder in the
-  header/footer of every page and in `site/favicon.svg`.
+- Not tax-deductible, said plainly and early. Registration as a nonprofit
+  is in progress; never claim deductibility before it's real. Don't
+  exaggerate the difficulty either (no "years and lawyers" framing).
+- Timelines: army baseline is "8+ weeks", never 16+. The fund's side is
+  "days, not weeks" — never promise 6 days or same-week delivery.
+- Reporting ceiling: receipts/records kept, costs published, "we share
+  what we can about where the money went." Never promise a per-purchase
+  public ledger or itemized prices — including in meta tags.
+- No claims of existing track record (fund is new; figures are planned/
+  representative ranges).
+- The fund serves a WIDE range of units (combat, recon, workshops —
+  "we serve where we can"). Never box it into technical/repair units;
+  never say "adapting commercial gear" (barely a thing).
+- Everything IS formally requested in the army — never say small items
+  aren't worth a formal request; the slow formal path is the whole pitch.
+- Structure facts on the site: dedicated bank account; unspent funds
+  default to another nonprofit supporting Israeli soldiers at wind-down;
+  advisors may be named but never tied to specific units.
+- Opsec: no unit names, base locations, identities, faces, or open gaps.
+- Known legal context (verified): IDF Order 33.0112 bars soldiers from
+  receiving donations for a unit outside the Order 35.0813 process;
+  approval sits at Personnel Directorate level. The site deliberately
+  avoids claiming commander sign-off is legally sufficient. Payments stay
+  off until Aryeh resolves structure/authorization with counsel.
 
-## Current state / open items
+## Design (pass 4, iterated — he approves the direction)
 
-1. Design pass four (2026-08-19): pass three rejected as cramped and
-   AI-flavoured. Rebuilt light and spacious — near-white field, deep-navy
-   hero/footer with aurora gradients, teal accent, Space Grotesk display.
-   Plain headlines, copy talks openly about the Israeli army (opsec rules
-   about unit names/locations still hold). Awaiting Aryeh's review.
-2. Payment rail: decide processor once a US account exists; then set
-   `data-payment-url`.
-3. Real content: his bio (TODO comments in home/about), real example
-   purchases with prices, contact email routing for
-   contact@defenseofinnovation.com (Cloudflare Email Routing, not set up).
-4. Custom domain: bind defenseofinnovation.com + www to the Pages project
-   (dashboard: Workers & Pages → defense-of-innovation → Custom domains).
-5. The Cloudflare API token used for deploys was pasted into a Claude
-   session's chat once — rotate it when convenient.
+Light blue field (#EFF5FA, bands to ~#D8E9F3) with deep-navy hero/footer
+(#07203C), cyan accent (#43CFF2 dark / #0989AE light / #086482 text on
+light — the darker value passes contrast), aurora gradients, dot grids,
+rings, route line-art. Space Grotesk display, Archivo body, Plex Mono
+figures, Playfair Display for the wordmark only (all self-hosted woff2 in
+site/fonts/). Signature motif: the route — dashed requisition maze vs
+clean gradient arc (hero graphic, subpage-header arcs, section line-art,
+steps rail). He WANTS the site polished and layered ("compensating" is
+the point) — do not strip ornament. Site works without JavaScript
+(reveals gated behind html.js). ?all query param forces all reveals
+(used for screenshot checks).
+
+## Logo — DECISION PENDING
+
+His mark: a Didone serif "I" stem + blue crescent bowl reading as "D"
+(original raster only ever existed in a chat; the site uses an SVG vector
+recreation). He found the Playfair "I" boring; five stem variants await
+his pick in `branding/`: A playfair-600 (live), B bodoni-700, C abril,
+D cinzel-700, E fraunces-900 (each with an -onnavy variant).
+
+To apply a choice: copy branding/logo-<pick>.svg → site/logo.svg and
+site/favicon.svg; branding/logo-<pick>-onnavy.svg → site/logo-mark.svg;
+regenerate site/og.png (a 1200×630 navy card — script pattern in the
+memory file; render with headless Brave). If the pick isn't Playfair,
+consider re-setting the wordmark (.wm-text in site/css/site.css) in the
+matching family — download the woff2 into site/fonts/ (all candidates are
+OFL on Google Fonts; grab the URL from fonts.googleapis.com/css2 with a
+browser User-Agent, take the U+0000-00FF subset).
 
 ## Repo layout
 
 ```
-site/            the whole deployable site (Cloudflare Pages output dir)
-  index.html     home
-  donate/        donate page + inert payment panel
-  about/         about page
-  faq/           donor FAQ
-  css/site.css   entire design system (tokens at top)
-  js/site.js     nav, scroll reveals, payment-panel wiring
-  fonts/         self-hosted woff2: Newsreader, Archivo, IBM Plex Mono (OFL)
-  _headers       Cloudflare Pages cache/security headers
+site/            deployable static site (Cloudflare Pages output dir)
+  index.html     home; donate/ about/ faq/ subpages
+  css/site.css   whole design system (tokens at top)
+  js/site.js     nav, reveals (?all bypass), donate-panel wiring
+  fonts/         self-hosted woff2 (Space Grotesk, Playfair, Archivo, Plex Mono)
+  logo.svg / logo-mark.svg / favicon.svg / og.png
+branding/        logo stem variants A–E awaiting Aryeh's pick
 wrangler.toml    Pages config (project: defense-of-innovation)
 .github/workflows/deploy.yml   auto-deploy on push
-.claude/skills/  grill-me + grilling interview skills (mattpocock, MIT)
 ```
 
-## Run locally
+## Run, verify, deploy
 
 ```bash
-git clone https://github.com/Stormblessed314/defense-of-innovation
-cd defense-of-innovation
-git checkout claude/defense-innovation-fund-site-ukfwms
-python3 -m http.server 8000 --directory site
+cd ~/defense-of-innovation && python3 -m http.server 8213 --directory site
 ```
 
-Then open http://localhost:8000. Edit files, refresh the browser — there is
-no build step. `npx wrangler pages dev site` gives a preview with Pages
-semantics (headers file etc.) if needed.
+Visual verification: the in-app Browser pane can go blank when hidden —
+use headless Brave via playwright-python instead
+(`chromium.launch(executable_path="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser")`),
+venv with playwright+fonttools+brotli lives in the session scratchpad
+(rebuild if gone). Run the style linter on any copy change:
+`~/.claude/skills/style-lint/scripts/style-lint.sh site/*.html site/*/index.html`
 
-## Deploy
+Deploy: push to `claude/defense-innovation-fund-site-ukfwms` (or main) —
+GitHub Actions deploys site/ to Cloudflare Pages automatically. Verify
+with `gh run list --limit 1` and a curl of the live URL.
 
-Every push to `claude/defense-innovation-fund-site-ukfwms` (or `main`)
-runs `.github/workflows/deploy.yml`, which deploys `site/` to the
-Cloudflare Pages project `defense-of-innovation` using the
-`CLOUDFLARE_API_TOKEN` / `CLOUDFLARE_ACCOUNT_ID` repository Actions
-secrets. Preview URL: https://defense-of-innovation.pages.dev. Manual
-deploy from a machine with the token in the environment:
-`npx wrangler pages deploy site --project-name defense-of-innovation`.
+## Open items
+
+1. Logo pick from branding/ (above), then wordmark font to match.
+2. Aryeh's real bio — TODO comments in home + about.
+3. Payment rail: when a processor exists, set data-payment-url on .pay in
+   site/donate/index.html (site.js enables the button automatically).
+   BLOCKED on legal/structure questions per the audit — his call.
+4. Custom domain: bind defenseofinnovation.com + www in the Cloudflare
+   dashboard (Workers & Pages → defense-of-innovation → Custom domains),
+   then update the canonical/OG URLs in all four HTML heads.
+5. Contact email routing for contact@defenseofinnovation.com
+   (Cloudflare Email Routing, not set up).
+6. Rotate the Cloudflare API token once convenient (it was pasted into a
+   Claude session's chat long ago).

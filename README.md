@@ -39,13 +39,10 @@ the page shows the "email us to give" interim block instead.
 
 ## Design system in one paragraph
 
-Light, open field (#F7FAFC) with a deep-navy hero and footer (#07203C).
-Teal is the accent for action and the speed idea (#0E9F8C on light,
-#2BE3C8 on dark); soft aurora gradients and a faint dot grid give the
-dark bands depth. Space Grotesk for display and UI, Archivo for body,
-IBM Plex Mono for prices and small print (all self-hosted woff2).
-Signature elements: the drawn speed line under the hero headline, the
-army-requisition-vs-fund comparison bars, and the open purchase table.
-Generous spacing throughout — the brief after three rejected passes was
-"not cramped." Logo mark is a placeholder glyph to be replaced by the
-real logo.
+Light blue field with deep-navy hero and footer, cyan accent, aurora
+gradients and route line-art (dashed requisition maze vs clean gradient
+arc — the brand motif). Space Grotesk display, Archivo body, IBM Plex
+Mono figures, Playfair Display wordmark, all self-hosted. The logo is a
+serif-I-plus-blue-crescent "D" monogram (site/logo.svg, with an on-navy
+variant and stem alternatives in branding/). Works without JavaScript;
+`?all` on any URL forces scroll reveals for screenshot checks.

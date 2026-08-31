@@ -4,11 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Donate — Defense of Innovation Fund</title>
-<meta name="description" content="One pooled fund. Your gift buys the next verified need, and every purchase is posted with its price. Not tax-deductible, and we say so plainly.">
+<meta name="description" content="One pooled fund with a dedicated bank account. Your gift buys the next verified need within days. Not tax-deductible.">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="stylesheet" href="/css/site.css">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="canonical" href="https://defense-of-innovation.pages.dev/donate/">
+<meta property="og:title" content="Donate — Defense of Innovation Fund">
+<meta property="og:description" content="One pooled fund. Your gift buys the next verified need within days.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://defense-of-innovation.pages.dev/donate/">
+<meta property="og:image" content="https://defense-of-innovation.pages.dev/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Donate — Defense of Innovation Fund">
+<meta name="twitter:description" content="One pooled fund. Your gift buys the next verified need within days.">
+<meta name="twitter:image" content="https://defense-of-innovation.pages.dev/og.png">
 </head>
 <body>
+
+<a class="skip" href="#main">Skip to content</a>
 
 <header class="hdr">
   <div class="wrap">
@@ -30,7 +43,7 @@
   </div>
 </header>
 
-<main>
+<main id="main">
 
 <section class="page-head on-dark">
   <div class="hero-aurora" aria-hidden="true"><i class="g1"></i><i class="g2"></i></div>
@@ -54,7 +67,7 @@
   <div class="wrap" style="position:relative;z-index:2">
     <p class="kicker">Donate</p>
     <h1>Fund the next purchase</h1>
-    <p class="lede">One pooled fund, no earmarks. Your money buys the next verified need, usually within the week.</p>
+    <p class="lede">One pooled fund, no earmarks. Your money buys the next verified need, within days.</p>
   </div>
 </section>
 
@@ -67,8 +80,8 @@
       <div style="padding-top:10px">
         <h2 class="rv">Pick an amount</h2>
         <div class="prose" style="margin-top:26px">
-          <p class="rv d1">For scale: <strong>$180</strong> covers a serious cordless drill, <strong>$540</strong> a batch of spare parts, <strong>$1,800</strong> a 3D printer with a year of filament.</p>
-          <p class="rv d2">Smaller gifts carry real weight here too — half of what the fund buys costs less than ₪1,000.</p>
+          <p class="rv d1">For scale: <strong>$180</strong> covers a professional cordless drill, <strong>$540</strong> a batch of spare parts, <strong>$1,800</strong> a 3D printer with a year of filament.</p>
+          <p class="rv d2">Smaller gifts matter here: plenty of what the fund buys, like parts, cables, and consumables, costs less than ₪1,000.</p>
           <p class="rv d2 small">Giving from a foundation or business, or thinking about a larger amount? Write to <a href="mailto:contact@defenseofinnovation.com" class="lnk">contact@defenseofinnovation.com</a> and we'll talk it through before any money moves.</p>
         </div>
       </div>
@@ -77,18 +90,18 @@
              data-payment-url on .pay and the button activates via site.js. -->
         <div class="pay rv" data-payment-url="">
           <div class="pay-toggle" role="group" aria-label="Donation frequency">
-            <button class="tg sel" data-freq="once">One-time</button>
-            <button class="tg" data-freq="monthly">Monthly</button>
+            <button class="tg sel" data-freq="once" aria-pressed="true">One-time</button>
+            <button class="tg" data-freq="monthly" aria-pressed="false">Monthly</button>
           </div>
           <div class="amounts" role="group" aria-label="Suggested amounts">
-            <button class="amt" data-amount="18">$18</button>
-            <button class="amt" data-amount="54">$54</button>
-            <button class="amt sel" data-amount="180">$180</button>
-            <button class="amt" data-amount="540">$540</button>
-            <button class="amt" data-amount="1800">$1,800</button>
+            <button class="amt" data-amount="18" aria-pressed="false">$18</button>
+            <button class="amt" data-amount="54" aria-pressed="false">$54</button>
+            <button class="amt sel" data-amount="180" aria-pressed="true">$180</button>
+            <button class="amt" data-amount="540" aria-pressed="false">$540</button>
+            <button class="amt" data-amount="1800" aria-pressed="false">$1,800</button>
             <label class="amt amt-custom"><span>$</span><input id="amt-other" inputmode="numeric" placeholder="Other" aria-label="Custom amount"></label>
           </div>
-          <button class="btn btn-solid" id="give-btn">Continue to payment</button>
+          <button class="btn btn-solid" id="give-btn" disabled>Continue to payment</button>
           <p class="pay-note" id="give-interim">Card payments aren't live yet. To give now, write to <a href="mailto:contact@defenseofinnovation.com">contact@defenseofinnovation.com</a> and we'll arrange it directly.</p>
           <p class="pay-trust">NOT TAX-DEDUCTIBLE · INDEPENDENT OF THE IDF · NO WEAPONS, EVER</p>
         </div>
@@ -102,11 +115,11 @@
     <div class="know">
       <div class="know-item rv">
         <h3>Where your money goes</h3>
-        <p>Into one pool, out to the next verified need. There are no earmarks — pooled money is what makes a same-week purchase possible, because the fund never has to raise for a specific item before buying it.</p>
+        <p>Donations pool in a single fund, held in a dedicated bank account, and are spent on the next verified need. There are no earmarks — pooling is what lets the fund buy without raising for each item first.</p>
       </div>
       <div class="know-item rv">
         <h3>How the fund reports</h3>
-        <p>Receipts and records are kept for every purchase, and we share what security allows — the kinds of equipment bought and what they cost, without unit names or locations.</p>
+        <p>Receipts and records are kept for every purchase. We publish our costs and share what we can about where the money went — without unit names or locations, and not in every case.</p>
       </div>
       <div class="know-item rv">
         <h3>What the fund costs to run</h3>

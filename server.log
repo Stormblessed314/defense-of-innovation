@@ -153,3 +153,16 @@
 127.0.0.1 - - [31/Aug/2026 13:02:11] "GET /fonts/ibm-plex-mono-500.woff2 HTTP/1.1" 200 -
 127.0.0.1 - - [31/Aug/2026 13:02:11] "GET /fonts/archivo-500.woff2 HTTP/1.1" 200 -
 127.0.0.1 - - [31/Aug/2026 13:02:11] "GET /favicon.svg HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 17:29:23] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 17:29:24] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 17:29:24] "GET /js/site.js HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 17:29:24] "GET /css/site.css HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 17:29:24] "GET /logo-mark.svg HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 17:29:24] "GET /fonts/space-grotesk-var.woff2 HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 17:29:24] "GET /fonts/archivo-400.woff2 HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 17:29:24] "GET /fonts/playfair-var.woff2 HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 17:29:24] "GET /fonts/ibm-plex-mono-400.woff2 HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 17:29:24] "GET /fonts/archivo-600.woff2 HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 17:29:24] "GET /fonts/ibm-plex-mono-500.woff2 HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 17:29:24] "GET /fonts/archivo-500.woff2 HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 17:29:24] "GET /favicon.svg HTTP/1.1" 200 -

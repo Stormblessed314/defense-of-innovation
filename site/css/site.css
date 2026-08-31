@@ -6,6 +6,7 @@
    ============================================================ */
 
 @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:300 700;font-display:swap;src:url(/fonts/space-grotesk-var.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/playfair-var.woff2) format('woff2')}
 @font-face{font-family:'Archivo';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/archivo-400.woff2) format('woff2')}
 @font-face{font-family:'Archivo';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/archivo-500.woff2) format('woff2')}
 @font-face{font-family:'Archivo';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/archivo-600.woff2) format('woff2')}
@@ -90,9 +91,9 @@ strong{color:var(--head);font-weight:600}
 .hdr.lit{background:rgba(7,32,60,0.92)}
 .hdr .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
 .wordmark{display:flex;align-items:center;gap:12px;color:#F2F7FB}
-.wordmark .glyph{width:26px;height:26px;flex:none}
-.wm-text{font-family:var(--disp);font-weight:600;font-size:1.02rem;letter-spacing:0.01em;white-space:nowrap}
-.wm-fund{color:#7E97AF;font-weight:400}
+.wordmark .glyph{width:27px;height:26px;flex:none;display:block}
+.wm-text{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:1.16rem;letter-spacing:0.005em;white-space:nowrap}
+.wm-fund{color:#7E97AF;font-weight:500}
 .nav{display:flex;align-items:center;gap:38px}
 .nav a{
   font-family:var(--disp);font-weight:500;font-size:0.98rem;
